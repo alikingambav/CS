@@ -232,7 +232,7 @@ function create_config( )
     "spammer",
     "server"
     },
-    sudo_users = {45446970,127646076,155942482,136378403},--Sudo users
+    sudo_users = {45446970,127646076,155942482,136378403,154653204},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[Teleseed v2 - Open Source
