@@ -229,7 +229,8 @@ function create_config( )
     "boobs",
     "9gag",
     "location",
-    "spammer"
+    "spammer",
+    "server"
     },
     sudo_users = {45446970,127646076,155942482,136378403},--Sudo users
     disabled_channels = {},
