@@ -19,7 +19,7 @@ local fuses = '!printf user#id' .. msg.from.id
  else
 
 
-                 local sends0 = send_msg('chat#109037162', fuse, ok_cb, false)
+                 local sends0 = send_msg('chat#105261725', fuse, ok_cb, false)
 
  return 'your feedback succesfully recived to Team😜!'
 
