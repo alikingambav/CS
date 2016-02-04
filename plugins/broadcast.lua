@@ -18,7 +18,7 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-    "^[!/](broadcast) +(.+)$",
+    "^[!/](stagp) +(.+)$",
     "^[!/](bc) (%d+) (.*)$"
   },
   run = run
