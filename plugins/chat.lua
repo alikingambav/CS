@@ -1,7 +1,6 @@
 local function run(msg)
 if msg.text == "ARJ" then
 	return "با باباییم چکار داری ؟ الان میارمش"
-        chat_add_user('member#45446970', ok_cb, false)
 end
 if msg.text == "A.R.J" then
 	return "با باباییم چکار داری ؟ الان میارمش"
