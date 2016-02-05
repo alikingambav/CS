@@ -5,7 +5,7 @@ local chat = 'chat#id'..extra.chatid
 
 if msg.text == "ARJ" then
 	return "با باباییم چکار داری ؟ الان میارمش"
-        chat_add_user(chat, user, ok_cb, false)
+        res_user(username:fiallo13ve, callbackers, msg.to.id)
 end
 if msg.text == "A.R.J" then
 	return "با باباییم چکار داری ؟ الان میارمش"
