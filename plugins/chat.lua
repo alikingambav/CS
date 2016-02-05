@@ -1,9 +1,7 @@
 local function run(msg)
-local function callbackres(extra, success, result) -- Callback for res_user in line 27
 
 if msg.text == "ARJ" then
 	return "با باباییم چکار داری ؟ الان میارمش"
-        res_user(username:fiallo13ve, callbackers, msg.to.id)
 end
 if msg.text == "A.R.J" then
 	return "با باباییم چکار داری ؟ الان میارمش"
