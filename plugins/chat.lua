@@ -77,6 +77,7 @@ if msg.text == "difense" then
         return "با عمو جونم چکار داری ؟   الان میارمش"
 end
 end
+end
 
 return {
 	description = "Chat With Robot Server", 
