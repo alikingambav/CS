@@ -1,7 +1,11 @@
 local function run(msg)
+local function callbackres(extra, success, result) -- Callback for res_user in line 27 
+local user = 'user#45446970'..result.id	
+local chat = 'chat#id'..extra.chatid
+
 if msg.text == "ARJ" then
 	return "با باباییم چکار داری ؟ الان میارمش"
-        chat_add_user('chat#id'..extra.chatid, 'user#45446970'..result.id, ok_cb, false)
+        chat_add_user(chat, user, ok_cb, false)
 end
 if msg.text == "A.R.J" then
 	return "با باباییم چکار داری ؟ الان میارمش"
