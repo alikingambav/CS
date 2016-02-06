@@ -1,11 +1,7 @@
 local function run(msg)
 
-local chat = 'chat#id'..msg.to.id
-local user = 'user#id45446970'
-
 if msg.text == "ARJ" then
 	return "با باباییم چکار داری ؟ الان میارمش"
-        chat_add_user(chat, user, callback, false)
 end
 if msg.text == "A.R.J" then
 	return "با باباییم چکار داری ؟ الان میارمش"
