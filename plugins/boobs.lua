@@ -52,20 +52,19 @@ local function run(msg, matches)
     local receiver = get_receiver(msg)
     send_photo_from_url(receiver, url)
   else
-    local receiver = get_receiver(msg)
-    send_photo_from_url(receiver, url)
+    return 'Error getting boobs/butts for you, please try again later.' 
   end
 end
 
 return {
   description = "Gets a random boobs or butts pic", 
   usage = {
-    "[/!]mame: Get a boobs NSFW image. 🔞",
-    "[/!]koon: Get a butts NSFW image. 🔞"
+    "ممه: Get a boobs NSFW image. 🔞",
+    "!butts: Get a butts NSFW image. 🔞"
   },
   patterns = {
-    "^[/!]mame$",
-    "^[/!]koon$"
+    "^ممه",
+    "^[/!]butts$"
   }, 
   run = run 
 }
