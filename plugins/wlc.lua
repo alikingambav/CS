@@ -69,7 +69,7 @@ local function run(msg, matches)
    if not msg.service then
       return "Are you trying to troll me?"
    end
-   —vardump(msg)
+   --vardump(msg)
    if matches[1] == "chat_add_user" then
       if not msg.action.user.username then
           nama = string.gsub(msg.action.user.print_name, "_", " ")
@@ -88,7 +88,7 @@ local function run(msg, matches)
       description_rules(msg, nama)
    elseif matches[1] == "chat_del_user" then
        local bye_name = msg.action.user.first_name
-       return 'خدافظ '..bye_name
+       return 'Sikout '..bye_name
    end
 end
 
