@@ -3,10 +3,10 @@ local function run(msg, matches)
   return "For moderators only !"
  end
  if matches[1] then
-    c = 1
-    e = 20
-    for c,e do
+   c = 1
+   while c <= 20 do
         print(c)
+        c = c + 1
     end
  end
 return
