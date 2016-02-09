@@ -7,7 +7,6 @@ local function run(msg, matches)
     e = 20
     for c,e do
         print(c)
-        c = c + 1
     end
  end
 return
