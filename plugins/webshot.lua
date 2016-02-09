@@ -1,4 +1,3 @@
---Shared by @BlackHatChannel
 local helpers = require "OAuth.helpers"
 
 local base = 'https://screenshotmachine.com/'
@@ -55,4 +54,3 @@ return {
    },
    run = run
 }
---Shared by @BlackHatChannel
