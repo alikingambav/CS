@@ -1,4 +1,5 @@
 local function run(msg, matches)
+local c = 1
  if not is_momod(msg) then 
   return "For moderators only !"
  end
