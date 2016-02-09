@@ -5,7 +5,7 @@ local function run(msg, matches)
  if matches[1] then
    c = 1
    while c <= 20 do
-        return '...'
+        return "..."
         c = c + 1
     end
  end
