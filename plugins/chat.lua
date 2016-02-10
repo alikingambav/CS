@@ -27,8 +27,8 @@ end
 if msg.text == "bot" then
 	return "بله ؟"
 end
-if msg.text == "sik :D" then
-	return " مودب باش رباتِ بی تلبیت"
+if msg.text == "/spam" then
+	return "/spam"
 end
 if msg.text == "kooni" then
 	return "فحش نده"
@@ -80,7 +80,7 @@ return {
 	patterns = {
 		"^[Hh]i$",
 		"^[Hh]ello$",
-		"^[Zz]ac$",
+		"^/spam$",
 		"^ZAC$",
 		"^[Bb]ot$",
 		"^[Uu]mbrella$",
