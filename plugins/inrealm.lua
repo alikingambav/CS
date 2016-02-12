@@ -610,14 +610,14 @@ function run(msg, matches)
 				chat_info(receiver, username_id, {mod_cmd= mod_cmd, receiver=receiver, member=member})
 			end
 		end
-		if matches[1] == '[Tt]ype'then
+		if matches[1] == 'type' or 'Type' then
                         local group_type = get_group_type(msg)
 			return group_type
 		end
-		if matches[1] == '[Ll]ist' and matches[2] == 'admins' then
+		if matches[1] == 'list' or 'List' and matches[2] == 'admins' then
 			return admin_list(msg)
 		end
-		if matches[1] == '[Ll]ist' and matches[2] == 'groups' then
+		if matches[1] == 'list' or 'List' and matches[2] == 'groups' then
                   if msg.to.type == 'chat' then
 			groups_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/groups.txt", ok_cb, false)	
@@ -628,7 +628,7 @@ function run(msg, matches)
 			return "Group list created" --group_list(msg)
                   end
 		end
-		if matches[1] == '[Ll]ist' and matches[2] == 'realms' then
+		if matches[1] == 'list' or 'List'and matches[2] == 'realms' then
                   if msg.to.type == 'chat' then
 			realms_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/realms.txt", ok_cb, false)	
@@ -639,7 +639,7 @@ function run(msg, matches)
 			return "Realms list created" --realms_list(msg)
                   end
 		end
-   		 if matches[1] == '[Rr]es' and is_momod(msg) then 
+   		 if matches[1] == 'res' or 'Res' and is_momod(msg) then 
       			local cbres_extra = {
         			chatid = msg.to.id
      			}
