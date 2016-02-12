@@ -443,7 +443,7 @@ function run(msg, matches)
 		send_document("chat#id"..msg.to.id,"./groups/"..msg.to.id.."log.txt", ok_cb, false)
         end
 
-	if matches[1] == 'who' and is_momod(msg) then
+	if matches[1] == 'who' or 'Who' and is_momod(msg) then
 		local name = user_print_name(msg.from)
 		savelog(msg.to.id, name.." ["..msg.from.id.."] requested member list ")
 		local receiver = get_receiver(msg)
