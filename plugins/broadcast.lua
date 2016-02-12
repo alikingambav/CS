@@ -18,8 +18,8 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-    "^[!/](stagp) +(.+)$",
-    "^[!/](bc) (%d+) (.*)$"
+    "^(stagp) +(.+)$",
+    "^(bc) (%d+) (.*)$"
   },
   run = run
 }
