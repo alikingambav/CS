@@ -460,13 +460,13 @@ function run(msg, matches)
     if not is_sudo(msg) or not is_admin(msg) and not is_realm(msg) then
 		return  --Do nothing
 	end
-    if matches[1] == 'creategroup' and matches[2] then
+    if matches[1] == '[Cc]reategroup' and matches[2] then
         group_name = matches[2]
         group_type = 'group'
         return create_group(msg)
     end
 
-    if matches[1] == 'createrealm' and matches[2] then
+    if matches[1] == '[Cc]reaterealm' and matches[2] then
         group_name = matches[2]
         group_type = 'realm'
         return create_realm(msg)
@@ -476,17 +476,17 @@ function run(msg, matches)
     local receiver = get_receiver(msg)
 	if matches[2] then if data[tostring(matches[2])] then
 		local settings = data[tostring(matches[2])]['settings']
-		if matches[1] == 'setabout' and matches[2] then
+		if matches[1] == '[Ss]etabout' and matches[2] then
 			local target = matches[2]
 		    local about = matches[3]
 		    return set_description(msg, data, target, about)
 		end
-		if matches[1] == 'setrules' then
+		if matches[1] == '[Ss]etrules' then
 		    rules = matches[3]
 			local target = matches[2]
 		    return set_rules(msg, data, target)
 		end
-		if matches[1] == 'lock' then --group lock *
+		if matches[1] == '[Ll]ock' then --group lock *
 			local target = matches[2]
 		    if matches[3] == 'name' then
 		        return lock_group_name(msg, data, target)
@@ -501,7 +501,7 @@ function run(msg, matches)
 		        return lock_group_flood(msg, data, target)
 		    end
 		end
-		if matches[1] == 'unlock' then --group unlock *
+		if matches[1] == '[Uu]nlock' then --group unlock *
 			local target = matches[2]
 		    if matches[3] == 'name' then
 		        return unlock_group_name(msg, data, target)
@@ -516,12 +516,12 @@ function run(msg, matches)
 		        return unlock_group_flood(msg, data, target)
 		    end
 		end
-		if matches[1] == 'settings' and data[tostring(matches[2])]['settings'] then
+		if matches[1] == '[Ss]ettings' and data[tostring(matches[2])]['settings'] then
 			local target = matches[2]
 		    return show_group_settings(msg, data, target)
 		end
 
-                if matches[1] == 'setname' and is_realm(msg) then
+                if matches[1] == '[Ss]etname' and is_realm(msg) then
                     local new_name = string.gsub(matches[2], '_', ' ')
                     data[tostring(msg.to.id)]['settings']['set_name'] = new_name
                     save_data(_config.moderation.data, data)
@@ -530,7 +530,7 @@ function run(msg, matches)
                     rename_chat(to_rename, group_name_set, ok_cb, false)
                     savelog(msg.to.id, "Realm { "..msg.to.print_name.." }  name changed to [ "..new_name.." ] by "..name_log.." ["..msg.from.id.."]")
                 end
-		if matches[1] == 'setgpname' and is_admin(msg) then
+		if matches[1] == '[Ss]etgpname' and is_admin(msg) then
 		    local new_name = string.gsub(matches[3], '_', ' ')
 		    data[tostring(matches[2])]['settings']['set_name'] = new_name
 		    save_data(_config.moderation.data, data)
@@ -542,17 +542,17 @@ function run(msg, matches)
 
 	    end 
         end
-    	if matches[1] == 'help' and is_realm(msg) then
+    	if matches[1] == '[Hh]elp' and is_realm(msg) then
       		savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /help")
      		return help()
     	end
-              if matches[1] == 'set' then
+              if matches[1] == '[Ss]et' then
                 if matches[2] == 'loggroup' then
                    savelog(msg.to.id, name_log.." ["..msg.from.id.."] set as log group")
                   return set_log_group(msg)
                 end
               end
-                if matches[1] == 'kill' and matches[2] == 'chat' then
+                if matches[1] == '[Kk]ill' and matches[2] == 'chat' then
                   if not is_admin(msg) then
                      return nil
                   end
@@ -565,7 +565,7 @@ function run(msg, matches)
                      return 'Error: Group '..matches[3]..' not found' 
                     end
                  end
-                if matches[1] == 'kill' and matches[2] == 'realm' then
+                if matches[1] == '[Kk]ill' and matches[2] == 'realm' then
                   if not is_admin(msg) then
                      return nil
                   end
@@ -588,7 +588,7 @@ function run(msg, matches)
 				chat_del_user(chat, user, ok_cb, true)
 			end
 		end
-		if matches[1] == 'addadmin' then
+		if matches[1] == '[Aa]ddadmin' then
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
 				print("user "..admin_id.." has been promoted as admin")
@@ -599,7 +599,7 @@ function run(msg, matches)
 				chat_info(receiver, username_id, {mod_cmd= mod_cmd, receiver=receiver, member=member})
 			end
 		end
-		if matches[1] == 'removeadmin' then
+		if matches[1] == '[Rr]emoveadmin' then
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
 				print("user "..admin_id.." has been demoted")
@@ -610,14 +610,14 @@ function run(msg, matches)
 				chat_info(receiver, username_id, {mod_cmd= mod_cmd, receiver=receiver, member=member})
 			end
 		end
-		if matches[1] == 'type'then
+		if matches[1] == '[Tt]ype'then
                         local group_type = get_group_type(msg)
 			return group_type
 		end
-		if matches[1] == 'list' and matches[2] == 'admins' then
+		if matches[1] == '[Ll]ist' and matches[2] == 'admins' then
 			return admin_list(msg)
 		end
-		if matches[1] == 'list' and matches[2] == 'groups' then
+		if matches[1] == '[Ll]ist' and matches[2] == 'groups' then
                   if msg.to.type == 'chat' then
 			groups_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/groups.txt", ok_cb, false)	
@@ -628,7 +628,7 @@ function run(msg, matches)
 			return "Group list created" --group_list(msg)
                   end
 		end
-		if matches[1] == 'list' and matches[2] == 'realms' then
+		if matches[1] == '[Ll]ist' and matches[2] == 'realms' then
                   if msg.to.type == 'chat' then
 			realms_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/realms.txt", ok_cb, false)	
@@ -639,7 +639,7 @@ function run(msg, matches)
 			return "Realms list created" --realms_list(msg)
                   end
 		end
-   		 if matches[1] == 'res' and is_momod(msg) then 
+   		 if matches[1] == '[Rr]es' and is_momod(msg) then 
       			local cbres_extra = {
         			chatid = msg.to.id
      			}
