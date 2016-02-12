@@ -13,7 +13,7 @@ return {
   description = "",
   usage = {""},
   patterns = {
-    "^[!/]([Ss]pam)";
+    "^([Ss]pam)";
     
 
   },
