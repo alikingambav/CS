@@ -6,7 +6,6 @@ do
   end
   block_user(user, cb_ok, false)
  end
-end
 
 local function run(msg, matches)
  local user = 'user#id'..matches[1]
