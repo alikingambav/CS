@@ -43,8 +43,8 @@ return {
       "!tagall : Mention all group members"},
    },
    patterns = {
-      "^!(tagall) +(.+)$",
-      "^!(tagall)$",
+      "^(tagall) +(.+)$",
+      "^(tagall)$",
    },
    run = run,
    moderated = true
