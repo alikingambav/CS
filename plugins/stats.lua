@@ -90,14 +90,14 @@ local function bot_stats()
   text = text..'\nGroups: '..r
   return text
 end
-local function run(msg, matches)
-  if matches[1]:lower() == 'teleseed' then -- Put everything you like :)
+local function run(msg, matches) 
+    if matches[1] == "Anti_bot" or maches[1] == "anti_bot" or matches[1] == "Anti-bot" or matches[1] == "anti-bot" then -- Put everything you like :)
     local about = _config.about_text
     local name = user_print_name(msg.from)
     savelog(msg.to.id, name.." ["..msg.from.id.."] used /teleseed ")
     return about
   end 
-  if matches[1]:lower() == "statslist" then
+  if matches[1]:lower() == "statslist" or matches[1]:lower() == "Statslist" then
     if not is_momod(msg) then
       return "For mods only !"
     end
@@ -106,7 +106,7 @@ local function run(msg, matches)
     savelog(msg.to.id, name.." ["..msg.from.id.."] requested group stats ")
     return chat_stats2(chat_id)
   end
-  if matches[1]:lower() == "stats" then
+  if matches[1]:lower() == "stats" or matches[1]:lower() == "Stats" then
     if not matches[2] then
       if not is_momod(msg) then
         return "For mods only !"
@@ -120,7 +120,7 @@ local function run(msg, matches)
         return
       end
     end
-    if matches[2] == "teleseed" then -- Put everything you like :)
+    if matches[2] == "Anti_bot" or maches[2] == "anti_bot" or matches[2] == "Anti-bot" or matches[2] == "anti-bot" then -- Put everything you like :)
       if not is_admin(msg) then
         return "For admins only !"
       else
@@ -141,8 +141,8 @@ return {
     "^([Ss]tats)$",
     "^([Ss]tatslist)$",
     "^([Ss]tats) (group) (%d+)",
-    "^([Ss]tats) (teleseed)",-- Put everything you like :)
-    "^([Tt]eleseed)"-- Put everything you like :)
+    "^([Ss]tats) ([Aa]nti[_-]bot)",-- Put everything you like :)
+    "^([Aa]nti[_-]bot)"-- Put everything you like :)
     }, 
   run = run
 }
