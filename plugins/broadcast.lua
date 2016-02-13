@@ -1,9 +1,9 @@
 local function run(msg, matches)
-	if matches[1] == 'bc' and is_admin(msg) then
+	if matches[1] == 'bc' or matches[1] == 'Bc'and is_admin(msg) then
 		local response = matches[3]
 		send_large_msg("chat#id"..matches[2], response)
 	end
-	if matches[1] == 'stagp' then
+	if matches[1] == 'stagp' or matches[1] == 'Stagp'then
 		if is_sudo(msg) then -- Only sudo !
 			local data = load_data(_config.moderation.data)
 			local groups = 'groups'
@@ -18,8 +18,8 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-    "^(stagp) +(.+)$",
-    "^(bc) (%d+) (.*)$"
+    "^([Ss]tagp) +(.+)$",
+    "^([Bb]c) (%d+) (.*)$"
   },
   run = run
 }
