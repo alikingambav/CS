@@ -971,7 +971,7 @@ local function run(msg, matches)
         return set_descriptionmod(msg, data, target, about)
       end
     end
-    if matches[1] == 'lock' then
+    if matches[1] == 'lock' or matches[1] == 'Lock' then
       local target = msg.to.id
       if matches[2] == 'name' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked name ")
@@ -998,7 +998,7 @@ local function run(msg, matches)
        return lock_group_leave(msg, data, target)
      end
    end
-    if matches[1] == 'unlock' then 
+    if matches[1] == 'unlock' or matches[1] == 'Unlock' then 
       local target = msg.to.id
       if matches[2] == 'name' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked name ")
