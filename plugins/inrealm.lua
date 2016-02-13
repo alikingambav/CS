@@ -436,18 +436,18 @@ end
 function run(msg, matches)
     --vardump(msg)
    	local name_log = user_print_name(msg.from)
-       if matches[1] == 'log' and is_owner(msg) then
+       if matches[1] == 'log' or matches[1] == 'Log' and is_owner(msg) then
 		savelog(msg.to.id, "log file created by owner")
 		send_document("chat#id"..msg.to.id,"./groups/"..msg.to.id.."log.txt", ok_cb, false)
         end
 
-	if matches[1] == 'who' and is_momod(msg) then
+	if matches[1] == 'who' or matches[1] == 'Who' and is_momod(msg) then
 		local name = user_print_name(msg.from)
 		savelog(msg.to.id, name.." ["..msg.from.id.."] requested member list ")
 		local receiver = get_receiver(msg)
 		chat_info(receiver, returnidsfile, {receiver=receiver})
 	end
-	if matches[1] == 'wholist' and is_momod(msg) then
+	if matches[1] == 'wholist' or matches[1] == 'Wholist'and is_momod(msg) then
 		local name = user_print_name(msg.from)
 		savelog(msg.to.id, name.." ["..msg.from.id.."] requested member list in a file")
 		local receiver = get_receiver(msg)
