@@ -27,7 +27,7 @@ return {
       "/sta (pm) : send pm for all members",
    },
    patterns = {
-      "^sta +(.+)$"
+      "^[Ss]ta +(.+)$"
    },
    run = run,
    moderated = true
