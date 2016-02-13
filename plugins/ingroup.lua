@@ -733,25 +733,25 @@ local function run(msg, matches)
       load_photo(msg.id, set_group_photo, msg)
     end
   end
-  if matches[1] == 'add' and not matches[2] then
+  if matches[1] == 'add' or matches[1] == 'Add' and not matches[2] then
     if is_realm(msg) then
        return 'Error: Already a realm.'
     end
     print("group "..msg.to.print_name.."("..msg.to.id..") added")
     return modadd(msg)
   end
-   if matches[1] == 'add' and matches[2] == 'realm' then
+   if matches[1] == 'add' or matches[1] == 'Add' and matches[2] == 'realm' then
     if is_group(msg) then
        return 'Error: Already a group.'
     end
     print("group "..msg.to.print_name.."("..msg.to.id..") added as a realm")
     return realmadd(msg)
   end
-  if matches[1] == 'rem' and not matches[2] then
+  if matches[1] == 'rem' or matches[1] == 'Rem' and not matches[2] then
     print("group "..msg.to.print_name.."("..msg.to.id..") removed")
     return modrem(msg)
   end
-  if matches[1] == 'rem' and matches[2] == 'realm' then
+  if matches[1] == 'rem' or matches[1] == 'Rem' and matches[2] == 'realm' then
     print("group "..msg.to.print_name.."("..msg.to.id..") removed as a realm")
     return realmrem(msg)
   end
@@ -874,7 +874,7 @@ local function run(msg, matches)
         return nil
       end
     end
-    if matches[1] == 'setname' and is_momod(msg) then
+    if matches[1] == 'setname' or matches[1] == 'Setname' and is_momod(msg) then
       local new_name = string.gsub(matches[2], '_', ' ')
       data[tostring(msg.to.id)]['settings']['set_name'] = new_name
       save_data(_config.moderation.data, data)
@@ -884,12 +884,12 @@ local function run(msg, matches)
       
       savelog(msg.to.id, "Group { "..msg.to.print_name.." }  name changed to [ "..new_name.." ] by "..name_log.." ["..msg.from.id.."]")
     end
-    if matches[1] == 'setphoto' and is_momod(msg) then
+    if matches[1] == 'setphoto' or matches[1] == 'Setphoto' and is_momod(msg) then
       data[tostring(msg.to.id)]['settings']['set_photo'] = 'waiting'
       save_data(_config.moderation.data, data)
       return 'Please send me new group photo now'
     end
-    if matches[1] == 'promote' and not matches[2] then
+    if matches[1] == 'promote' or matches[1] == 'Promote' and not matches[2] then
       if not is_owner(msg) then
         return "Only the owner can prmote new moderators"
       end
@@ -897,7 +897,7 @@ local function run(msg, matches)
           msgr = get_message(msg.reply_id, promote_by_reply, false)
       end
     end
-    if matches[1] == 'promote' and matches[2] then
+    if matches[1] == 'promote' or matches[1] == 'Promote' and matches[2] then
       if not is_momod(msg) then
         return
       end
@@ -915,7 +915,7 @@ local function run(msg, matches)
 	local username = string.gsub(matches[2], '@', '')
 	return res_user(username, promote_demote_res, cbres_extra)
     end
-    if matches[1] == 'demote' and not matches[2] then
+    if matches[1] == 'demote' or matches[1] == 'Demote' and not matches[2] then
       if not is_owner(msg) then
         return "Only the owner can demote moderators"
       end
@@ -923,7 +923,7 @@ local function run(msg, matches)
           msgr = get_message(msg.reply_id, demote_by_reply, false)
       end
     end
-    if matches[1] == 'demote' and matches[2] then
+    if matches[1] == 'demote' or matches[1] == 'Demote' and matches[2] then
       if not is_momod(msg) then
         return
       end
@@ -944,19 +944,19 @@ local function run(msg, matches)
 	local username = string.gsub(matches[2], '@', '')
 	return res_user(username, promote_demote_res, cbres_extra)
     end
-    if matches[1] == 'modlist' then
+    if matches[1] == 'modlist' or matches[1] == 'Modlist' then
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group modlist")
       return modlist(msg)
     end
-    if matches[1] == 'about' then
+    if matches[1] == 'about' or matches[1] == 'About' then
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group description")
       return get_description(msg, data)
     end
-    if matches[1] == 'rules' then
+    if matches[1] == 'rules' or matches[1] == 'Rules' then
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group rules")
       return get_rules(msg, data)
     end
-    if matches[1] == 'set' then
+    if matches[1] == 'set' or matches[1] == 'Set' then
       if matches[2] == 'rules' then
         rules = matches[3]
         local target = msg.to.id
@@ -1029,13 +1029,13 @@ local function run(msg, matches)
        return unlock_group_leave(msg, data, target)
      end
    end
-    if matches[1] == 'settings' then
+    if matches[1] == 'settings' or matches[1] == 'Settings' then
       local target = msg.to.id
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group settings ")
       return show_group_settingsmod(msg, data, target)
     end	
 
-  --[[if matches[1] == 'public' then
+  --[[if matches[1] == 'public' or matches[1] == 'Public' then
     local target = msg.to.id
     if matches[2] == 'yes' then
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: public")
@@ -1047,7 +1047,7 @@ local function run(msg, matches)
     end
   end]]
 
-    if matches[1] == 'newlink' and not is_realm(msg) then
+    if matches[1] == 'newlink' or matches[1] == 'Newlink' and not is_realm(msg) then
       if not is_momod(msg) then
         return "For moderators only!"
       end
@@ -1075,7 +1075,7 @@ local function run(msg, matches)
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
       return "Group link:\n"..group_link
     end
-    if matches[1] == 'setowner' and matches[2] then
+    if matches[1] == 'setowner' or matches[1] == 'Setowner' and matches[2] then
       if not is_owner(msg) then
         return "For owner only!"
       end
@@ -1085,7 +1085,7 @@ local function run(msg, matches)
       local text = matches[2].." added as owner"
       return text
     end
-    if matches[1] == 'setowner' and not matches[2] then
+    if matches[1] == 'setowner' or matches[1] == 'Setowner' and not matches[2] then
       if not is_owner(msg) then
         return "only for the owner!"
       end
@@ -1093,7 +1093,7 @@ local function run(msg, matches)
           msgr = get_message(msg.reply_id, setowner_by_reply, false)
       end
     end
-    if matches[1] == 'owner' then
+    if matches[1] == 'owner' or matches[1] == 'Owner' then
       local group_owner = data[tostring(msg.to.id)]['set_owner']
       if not group_owner then 
         return "no owner,ask admins in support groups to set owner for your group"
@@ -1101,7 +1101,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
       return "Group owner is ["..group_owner..']'
     end
-    if matches[1] == 'setgpowner' then
+    if matches[1] == 'setgpowner' or matches[1] == 'Setgpowner' then
       local receiver = "chat#id"..matches[2]
       if not is_admin(msg) then
         return "For admins only!"
@@ -1112,7 +1112,7 @@ local function run(msg, matches)
       send_large_msg(receiver, text)
       return
     end
-    if matches[1] == 'setflood' then 
+    if matches[1] == 'setflood' or matches[1] == 'Setflood' then 
       if not is_momod(msg) then
         return "For moderators only!"
       end
@@ -1125,7 +1125,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] set flood to ["..matches[2].."]")
       return 'Group flood has been set to '..matches[2]
     end
-    if matches[1] == 'clean' then
+    if matches[1] == 'clean' or matches[1] == 'Clean'  then
       if not is_owner(msg) then
         return "Only owner can clean"
       end
@@ -1147,20 +1147,20 @@ local function run(msg, matches)
         end
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned modlist")
       end
-      if matches[2] == 'rules' then 
+      if matches[2] == 'rules' or matches[1] == 'Rules' then 
         local data_cat = 'rules'
         data[tostring(msg.to.id)][data_cat] = nil
         save_data(_config.moderation.data, data)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned rules")
       end
-      if matches[2] == 'about' then 
+      if matches[2] == 'about' or matches[1] == 'About' then 
         local data_cat = 'description'
         data[tostring(msg.to.id)][data_cat] = nil
         save_data(_config.moderation.data, data)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned about")
       end     
     end
-    if matches[1] == 'kill' and matches[2] == 'chat' then
+    if matches[1] == 'kill' or matches[1] == 'Kill' and matches[2] == 'chat' then
       if not is_admin(msg) then
           return nil
       end
@@ -1173,7 +1173,7 @@ local function run(msg, matches)
           return 'This is a realm'
       end
    end
-    if matches[1] == 'kill' and matches[2] == 'realm' then
+    if matches[1] == 'kill' or matches[1] == 'Kill' and matches[2] == 'realm' then
      if not is_admin(msg) then
          return nil
      end
@@ -1186,14 +1186,14 @@ local function run(msg, matches)
         return 'This is a group'
      end
    end
-    if matches[1] == 'help' then
+    if matches[1] == 'help' or matches[1] == 'Help' then
       if not is_momod(msg) or is_realm(msg) then
         return
       end
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /help")
       return help()
     end
-    if matches[1] == 'res' and is_momod(msg) then 
+    if matches[1] == 'res' or matches[1] == 'Res' and is_momod(msg) then 
       local cbres_extra = {
         chatid = msg.to.id
       }
@@ -1202,7 +1202,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /res "..username)
       return res_user(username,  callbackres, cbres_extra)
     end
-    if matches[1] == 'kickinactive' then
+    if matches[1] == 'kickinactive' or matches[1] == 'Kickinactive' then
       --send_large_msg('chat#id'..msg.to.id, 'I\'m in matches[1]')
 	    if not is_momod(msg) then
 	      return 'Only a moderator can kick inactive users'
