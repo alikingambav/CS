@@ -50,7 +50,7 @@ return {
       "/web (url) : screen shot of website"
    },
    patterns = {
-      "^web (https?://[%w-_%.%?%.:/%+=&]+)$",
+      "^[Ww]eb (https?://[%w-_%.%?%.:/%+=&]+)$",
    },
    run = run
 }
