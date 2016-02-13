@@ -981,6 +981,10 @@ local function run(msg, matches)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
         return lock_group_membermod(msg, data, target)
         end
+      if matches[2] == 'photo' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked photo ")
+        return lock_group_photomod(msg, data, target)
+      end
       if matches[2] == 'flood' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked flood ")
         return lock_group_floodmod(msg, data, target)
