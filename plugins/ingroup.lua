@@ -1064,7 +1064,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] revoked group link ")
       return export_chat_link(receiver, callback, true)
     end
-    if matches[1] == ['link''Link'] then
+    if matches[1] == 'link' or matches[1] == 'Link' then
       if not is_momod(msg) then
         return "For moderators only!"
       end
