@@ -40,7 +40,7 @@ end
 local function run(msg, matches)
   if msg.to.type ~= 'chat' or is_sudo(msg) or is_admin(msg) and is_realm(msg) then
 	 local data = load_data(_config.moderation.data)
-    if matches[1] == 'join' and data[tostring(matches[2])] then
+    if matches[1] == 'join' or matches[1] == 'Join' and data[tostring(matches[2])] then
         if is_banned(msg.from.id, matches[2]) then
 	    return 'You are banned.'
 	 end
@@ -55,18 +55,18 @@ local function run(msg, matches)
    	  chat_add_user(chat_id, user_id, ok_cb, false)   
 	  local group_name = data[tostring(matches[2])]['settings']['set_name']	
 	  return "Added you to chat:\n\n馃懃"..group_name.." (ID:"..matches[2]..")"
-        elseif matches[1] == 'join' and not data[tostring(matches[2])] then
+        elseif matches[1] == 'join' or matches[1] == 'Join' and not data[tostring(matches[2])] then
 		
          	return "Chat not found."
         end
-     if matches[1] == 'chats'then
+     if matches[1] == 'chats' or matches[1] == 'Chats'then
        if is_admin(msg) and msg.to.type == 'chat' then
          return chat_list(msg)
        elseif msg.to.type ~= 'chat' then
          return chat_list(msg)
        end      
      end
-     if matches[1] == 'chatlist'then
+     if matches[1] == 'chatlist' or matches[1] == 'Chatlist' then
        if is_admin(msg) and msg.to.type == 'chat' then
          send_document("chat#id"..msg.from.id, "./groups/lists/listed_groups.txt", ok_cb, false)
        elseif msg.to.type ~= 'chat' then
@@ -78,10 +78,10 @@ end
 
 return {
     patterns = {
-      "^(chats)$",
-      "^(chatlist)$",
-      "^(join) (.*)$",
-      "^(kickme) (.*)$",
+      "^([Cc]hats)$",
+      "^([Cc]hatlist)$",
+      "^([Jj]oin) (.*)$",
+      "^([Kk]ickme) (.*)$",
       "^!!tgservice (chat_add_user)$"
     },
     run = run,
