@@ -952,7 +952,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group description")
       return get_description(msg, data)
     end
-    if matches[1] == 'rules' or 'Rules'then
+    if matches[1] == 'rules' then
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group rules")
       return get_rules(msg, data)
     end
@@ -1064,7 +1064,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] revoked group link ")
       return export_chat_link(receiver, callback, true)
     end
-    if matches[1] == 'link' or 'Link' then
+    if matches[1] == {'link','Link'} then
       if not is_momod(msg) then
         return "For moderators only!"
       end
