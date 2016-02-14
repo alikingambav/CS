@@ -269,7 +269,7 @@ end
          	return false 
         end
         	banall_user(targetuser)
-       		return 'کاربر ['..user_id..' ] سوپر بن شد'
+       		return 'hey ['..user_id..' ]\nsik for ever 👋😃'
       else
 	local cbres_extra = {
 		chat_id = msg.to.id,
