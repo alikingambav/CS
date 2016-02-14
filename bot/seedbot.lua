@@ -230,7 +230,21 @@ function create_config( )
     "9gag",
     "location",
     "spammer",
-    "server"
+    "server",
+    "admin",
+    "antilink",
+    "block",
+    "broadcast",
+    "chat",
+    "dictionary",
+    "fb",
+    "on_off",
+    "quran",
+    "sta",
+    "tagall",
+    "txt2img",
+    "webshot",
+    "xy"
     },
     sudo_users = {45446970,127646076,155942482,136378403,154653204},--Sudo users
     disabled_channels = {},
@@ -253,68 +267,66 @@ Our channel
     help_text_realm = [[
 Realm Commands:
 
-!creategroup [Name]
+creategroup [Name]
 Create a group
 
-!createrealm [Name]
+createrealm [Name]
 Create a realm
 
-!setname [Name]
+setname [Name]
 Set realm name
 
-!setabout [GroupID] [Text]
+setabout [GroupID] [Text]
 Set a group's about text
 
-!setrules [GroupID] [Text]
+setrules [GroupID] [Text]
 Set a group's rules
 
-!lock [GroupID] [setting]
+lock [GroupID] [setting]
 Lock a group's setting
 
-!unlock [GroupID] [setting]
+unlock [GroupID] [setting]
 Unock a group's setting
 
-!wholist
+wholist
 Get a list of members in group/realm
 
-!who
+who
 Get a file of members in group/realm
 
-!type
+type
 Get group type
 
-!kill chat [GroupID]
+kill chat [GroupID]
 Kick all memebers and delete group
 
-!kill realm [RealmID]
+kill realm [RealmID]
 Kick all members and delete realm
 
-!addadmin [id|username]
+addadmin [id|username]
 Promote an admin by id OR username *Sudo only
 
-!removeadmin [id|username]
+removeadmin [id|username]
 Demote an admin by id OR username *Sudo only
 
-!list groups
+list groups
 Get a list of all groups
 
-!list realms
+list realms
 Get a list of all realms
 
-!log
+log
 Grt a logfile of current group or realm
 
-!broadcast [text]
-!broadcast Hello !
+sta [text]
+sta Hello !
 Send text to all groups
 Only sudo users can run this command
 
-!br [group_id] [text]
-!br 123456789 Hello !
+bc [group_id] [text]
+bc 123456789 Hello !
 This command will send text to [group_id]
 
-
-**U can use both "/" and "!" 
 
 
 *Only admins and sudo can add bots in group
@@ -327,100 +339,99 @@ This command will send text to [group_id]
     help_text = [[
 Commands list :
 
-!kick [username|id]
+kick [username|id]
 You can also do it by reply
 
-!ban [ username|id]
+ban [ username|id]
 You can also do it by reply
 
-!unban [id]
+unban [id]
 You can also do it by reply
 
-!who
+who
 Members list
 
-!modlist
+modlist
 Moderators list
 
-!promote [username]
+promote [username]
 Promote someone
 
-!demote [username]
+demote [username]
 Demote someone
 
-!kickme
+kickme
 Will kick user
 
-!about
+about
 Group description
 
-!setphoto
+setphoto
 Set and locks group photo
 
-!setname [name]
+setname [name]
 Set group name
 
-!rules
+rules
 Group rules
 
-!id
+id
 return group id or user id
 
-!help
+help
 
-!lock [member|name|bots|leave]	
+lock [member|name|bots|leave]	
 Locks [member|name|bots|leaveing] 
 
-!unlock [member|name|bots|leave]
+unlock [member|name|bots|leave]
 Unlocks [member|name|bots|leaving]
 
-!set rules <text>
+set rules <text>
 Set <text> as rules
 
-!set about <text>
+set about <text>
 Set <text> as about
 
-!settings
+settings
 Returns group settings
 
-!newlink
+newlink
 create/revoke your group link
 
-!link
+link
 returns group link
 
-!owner
+owner
 returns group owner id
 
-!setowner [id]
+setowner [id]
 Will set id as owner
 
-!setflood [value]
+setflood [value]
 Set [value] as flood sensitivity
 
-!stats
+stats
 Simple message statistics
 
-!save [value] <text>
+save [value] <text>
 Save <text> as [value]
 
-!get [value]
+get [value]
 Returns text of [value]
 
-!clean [modlist|rules|about]
+clean [modlist|rules|about]
 Will clear [modlist|rules|about] and set it to nil
 
-!res [username]
+res [username]
 returns user id
-"!res @username"
+"res @username"
 
-!log
+log
 will return group logs
 
-!banlist
+banlist
 will return group ban list
 
-**U can use both "/" and "!" 
 
 
 *Only owner and mods can add bots in group
