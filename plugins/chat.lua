@@ -65,7 +65,11 @@ if msg.text == "Bye" then
 	return "خدافظ ، مواظب زیباییت باش"
 end
 if msg.text == "گه نخور" then
+        if msg.from.id == 163203426 then
+               return "چشم گلم"
+        else
         return "من تو رو نمیخورم"
+        end
 end
 if msg.text == "کس ننت" then
 	return "با مِیمَنَت ، اینم سند ، تو شرتو کرستِ ننت"
