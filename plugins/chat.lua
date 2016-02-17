@@ -16,9 +16,9 @@ end
 if msg.text == "ربات" then
         if msg.from.id = 163203426 then
                 return "جووونم نفسم ؟ بگو سولمازی 😍"
-        elseif msg.from.id = tonumber(x) then
+        elseif msg.from.id = 45446970 then
                 return "جونم بابایی؟"
-        elseif msg.from.id = tonumber(y) then
+        elseif msg.from.id = 136378403 then
                 return "جونم عمو😍"
         else
 	return "بله؟"
