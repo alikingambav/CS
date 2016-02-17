@@ -14,11 +14,11 @@ if msg.text == "hi" then
 	return "سلام...  اگه میشه فارسی تایپ کن"
 end
 if msg.text == "ربات" then
-        if msg.from.id = 163203426 then
+        if msg.from.id == 163203426 then
                 return "جووونم نفسم ؟ بگو سولمازی 😍"
-        elseif msg.from.id = 45446970 then
+        elseif msg.from.id == 45446970 then
                 return "جونم بابایی؟"
-        elseif msg.from.id = 136378403 then
+        elseif msg.from.id == 136378403 then
                 return "جونم عمو😍"
         else
 	return "بله؟"
