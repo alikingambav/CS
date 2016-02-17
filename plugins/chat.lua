@@ -1,4 +1,4 @@
-local function run(msg)
+local function run(msg,matches)
 local x = 45446970
 local y = 136378403
 
@@ -114,12 +114,22 @@ end
 if msg.text == "سولماز" then
         return "عشق منو چکارش داری؟😡"
 end
+if msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(x) then
+        return "سلام بابایی 😍 ، خوش اومدی ..."
+elseif msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(y) then
+        return "سلام بابایی 😍 ، خوش اومدی ..."
+elseif msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(x) then
+        return "واااای باباییم رفت 😞"
+elseif msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(y) then
+        return "واااای عمو جونم رفت 😞"
+end
 end
 
 return {
 	description = "Chat With Robot Server", 
 	usage = "chat with robot",
 	patterns = {
+                "^!!tgservice (.+)$",
 		"^[Hh]i$",
 		"^[Hh]ello$",
 		"^[Ss]pam$",
