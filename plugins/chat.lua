@@ -117,7 +117,7 @@ end
 if msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(x) then
         return "سلام بابایی 😍 ، خوش اومدی ..."
 elseif msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(y) then
-        return "سلام بابایی 😍 ، خوش اومدی ..."
+        return "سلام عمو 😍 ، خوش اومدی ..."
 elseif msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(x) then
         return "واااای باباییم رفت 😞"
 elseif msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(y) then
