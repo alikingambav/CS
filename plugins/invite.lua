@@ -1,6 +1,7 @@
 do
 local function callbackres(extra, success, result) -- Callback for res_user in line 27
   local user = 'user#id'..result.id
+  local user = 'user#id'..matches[1]
 	local chat = 'chat#id'..extra.chatid
 	if is_banned(result.id, extra.chatid) then -- Ignore bans
             send_large_msg(chat, 'User is banned.')
@@ -29,7 +30,6 @@ function run(msg, matches)
 	local cbres_extra = {chatid = msg.to.id}
   local username = matches[1]
   local username = username:gsub("@","")
-  local username = id
   res_user(username,  callbackres, cbres_extra)
 end
 return {
