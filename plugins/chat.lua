@@ -1,10 +1,14 @@
 local function run(msg)
+local x = 45446970
+local y = 136378403
 
 if msg.text == "ARJ" then
 	return "با باباییم چکار داری ؟ الان میارمش"
+        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
 end
 if msg.text == "A.R.J" then
 	return "با باباییم چکار داری ؟ الان میارمش"
+        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
 end
 if msg.text == "hi" then
 	return "سلام...  اگه میشه فارسی تایپ کن"
@@ -71,9 +75,11 @@ if msg.text == "خیلی خستم" then
 end
 if msg.text == "Difense" then
         return "با عمو جونم چکار داری ؟    الان میارمش"
+        chat_add_user("chat#id"..msg.to.id, 'user#id'..y, ok_cb, false)
 end
 if msg.text == "difense" then
         return "با عمو جونم چکار داری ؟   الان میارمش"
+        chat_add_user("chat#id"..msg.to.id, 'user#id'..y, ok_cb, false)
 end
 if msg.text == "جووووون" then
         return "زاااارت"
