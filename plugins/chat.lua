@@ -22,6 +22,7 @@ if msg.text == "ربات" then
                 return "جونم عمو😍"
         else
 	return "بله؟"
+        end
 end
 if msg.text == "Salam" then
 	return "سلام علیکم ، فارسی تایپ کن"
