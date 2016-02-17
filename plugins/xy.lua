@@ -1,7 +1,7 @@
 do
 local function run(msg, matches)
 local x = 45446970
-local y = 155942482
+local y = 125775990
 local z = 136378403
     if msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(x) then
        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
