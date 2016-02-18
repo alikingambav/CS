@@ -8,7 +8,7 @@ function run(msg, matches)
 
 for i=1, num, 1 do
 
-return txt
+return "test"
 i = i + 1
 
 end
