@@ -4,7 +4,8 @@ local x = 125775990
  if msg.text == "xy on" or msg.text == "Xy on" then
     local xy = on
     return "XY ✅"
- elseif msg.test == "xy off" or msg.text "Xy off" then
+ end
+ if msg.test == "xy off" or msg.text == "Xy off" then
     local xy = off
     return "XY ❌"
  end
