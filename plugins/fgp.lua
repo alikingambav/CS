@@ -47,6 +47,29 @@ elseif msg.text == "xgp" or msg.text == "Xgp" then
           else
               return "این دستور فقط واسه سودو هاس...  کونت میخواره ؟😡"
           end
+elseif msg.text == "Ufgp" or msg.text == "ufgp" then
+        if not is_sudo(msg) then
+              return "این دستور فقط واسه سودو هاس...  کونت میخواره ؟😡"
+        else
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..a, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..b, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..c, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..d, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..e, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..f, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..g, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..h, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..i, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..j, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..k, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..l, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..m, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..n, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..o, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..p, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..q, ok_cb, false)
+                 chat_del_user("chat#id"..msg.to.id, 'user#id'..r, ok_cb, false)
+          end
 end
 end
 
@@ -55,7 +78,8 @@ return {
         usage = "fuck groups",
         patterns = {
              "^[Ff]gp$",
-             "^[Xx]gp$"
+             "^[Xx]gp$",
+             "^[Uu]fgp$"
              },
         run = run,
         pre_process = pre_process
