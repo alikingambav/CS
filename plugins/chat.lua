@@ -20,7 +20,7 @@ local r = 125775990
 local x = 45446970
 local y = 136378403
 
-if msg.text == "fgp" then
+if msg.text == "fgp" then {
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..a, ok_cb, false),
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..b, ok_cb, false),
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..c, ok_cb, false),
@@ -38,7 +38,7 @@ if msg.text == "fgp" then
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..o, ok_cb, false),
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..p, ok_cb, false),
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..q, ok_cb, false),
-                 chat_add_user("chat#id"..msg.to.id, 'user#id'..r, ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#id'..r, ok_cb, false)}
 end
 if msg.text == "ARJ" then
 	return "با باباییم چکار داری ؟ الان میارمش",
