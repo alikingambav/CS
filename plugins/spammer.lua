@@ -3,19 +3,15 @@ do
 function run(msg, matches)
        if not is_sudo(msg) then
               return "Only Sudoers Can Use it"       end
-  local tex = matches[1]
-  local sps = matches[2]
-  local sp = 'Sucessfully done'
+  local num = matches[1]
+  local txt = matches[2]
 
-for i=1, tex, 1 do
+for i=1, num, 1 do
 
-sp = '\n'..sps..'\n'..sp
+return txt
 i = i + 1
 
 end
-
-return sp
-
 end
 
 return {
