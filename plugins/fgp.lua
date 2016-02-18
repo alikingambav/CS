@@ -18,7 +18,7 @@ local p = 191871309
 local q = 172916552
 local r = 180503834
 
-if msg.text == "fuckgp" or msg.text == "Fuckgp" then
+if msg.text == "fgp" or msg.text == "Fgp" then
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..a, ok_cb, false)
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..b, ok_cb, false)
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..c, ok_cb, false)
@@ -37,7 +37,7 @@ if msg.text == "fuckgp" or msg.text == "Fuckgp" then
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..p, ok_cb, false)
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..q, ok_cb, false)
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..r, ok_cb, false)
-elseif msg.text == "fgp" or msg.text == "Fgp" then
+elseif msg.text == "xgp" or msg.text == "Xgp" then
 
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..a, ok_cb, false)
 end
