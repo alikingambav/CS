@@ -1,3 +1,4 @@
+do
 local function run(msg)
 lacal a = 180503834
 local b = 198725287
@@ -50,3 +51,4 @@ return {
                    },
        run = run
 }
+end
