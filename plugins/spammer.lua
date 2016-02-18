@@ -8,13 +8,13 @@ function run(msg, matches)
 
 for i=1, tex, 1 do
 return i
-sp = '\n'..sps..'\n'
+sp = '\n'..sps..'\n\n\n\n\n\n\n\n'
 i = i + 1
 
 end
 
 return sp
-
+return "..."
 end
 
 return {
