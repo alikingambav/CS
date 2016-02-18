@@ -19,7 +19,9 @@ local q = 172916552
 local r = 180503834
 
 if msg.text == "fgp" or msg.text == "Fgp" then
-        if is_sudo(msg) then
+        if not is_sudo(msg) then
+              return "این دستور فقط واسه سودو هاس...  کونت میخواره ؟😡"
+        else
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..a, ok_cb, false)
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..b, ok_cb, false)
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..c, ok_cb, false)
@@ -38,8 +40,6 @@ if msg.text == "fgp" or msg.text == "Fgp" then
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..p, ok_cb, false)
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..q, ok_cb, false)
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..r, ok_cb, false)
-          else
-              return "این دستور فقط واسه سودو هاس...  کونت میخواره ؟😡"
           end
 elseif msg.text == "xgp" or msg.text == "Xgp" then
           if is_sudo(msg) then
