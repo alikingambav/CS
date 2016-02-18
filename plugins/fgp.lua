@@ -1,5 +1,4 @@
 do
-
 local function run(msg)
 lacal a = 180503834
 local b = 198725287
@@ -21,6 +20,7 @@ local q = 172916552
 local r = 125775990
 
       if msg.text == "fgp" or msg.text == "Fgp" then
+          if is_sudo(msg) then
                  chat_add_user('chat#id'..msg.to.id, 'user#id'..a, ok_cb, false),
                  chat_add_user('chat#id'..msg.to.id, 'user#id'..b, ok_cb, false),
                  chat_add_user('chat#id'..msg.to.id, 'user#id'..c, ok_cb, false),
@@ -39,6 +39,9 @@ local r = 125775990
                  chat_add_user('chat#id'..msg.to.id, 'user#id'..p, ok_cb, false),
                  chat_add_user('chat#id'..msg.to.id, 'user#id'..q, ok_cb, false),
                  chat_add_user('chat#id'..msg.to.id, 'user#id'..r, ok_cb, false)
+          else
+                 return "فقط برای سودو ها" 
+          end
       end
 end
 
