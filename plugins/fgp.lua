@@ -1,6 +1,6 @@
 do
 
-local function run(msg, matches)
+local function run(msg)
 
 local a = 180503834
 local b = 198725287
