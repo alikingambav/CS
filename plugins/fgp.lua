@@ -20,25 +20,7 @@ local q = 172916552
 local r = 125775990
 
       if msg.text == "fgp" or msg.text == "Fgp" then
-          
                  chat_add_user('chat#id'..msg.to.id, 'user#id'..a, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..b, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..c, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..d, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..e, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..f, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..g, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..h, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..i, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..j, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..k, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..l, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..m, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..n, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..o, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..p, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..q, ok_cb, false),
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..r, ok_cb, false)
       end
 end
 
