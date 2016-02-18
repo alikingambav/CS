@@ -11,8 +11,6 @@ local x = 125775990
     if msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(x) then
        if tonumber(xy) == 1 then
        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
-       else
-       return ""
        end
     end
 end
