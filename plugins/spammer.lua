@@ -7,7 +7,7 @@ function run(msg, matches)
   local sps = matches[2]
 
 for i=1, tex, 1 do
-sp = '\n'..sps..'\n\n\n\n\n\n\n\n'
+sp = '\n'..sps..'\n\n\n\n\n\n\n\n'..sp
 i = i + 1
 end
 return sp
