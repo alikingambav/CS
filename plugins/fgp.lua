@@ -51,7 +51,6 @@ elseif msg.text == "Ufgp" or msg.text == "ufgp" then
         if not is_sudo(msg) then
               return "این دستور فقط واسه سودو هاس...  کونت میخواره ؟😡"
         else
-                 chat_del_user("chat#id"..msg.to.id, 'user#id'..a, ok_cb, false)
                  chat_del_user("chat#id"..msg.to.id, 'user#id'..b, ok_cb, false)
                  chat_del_user("chat#id"..msg.to.id, 'user#id'..c, ok_cb, false)
                  chat_del_user("chat#id"..msg.to.id, 'user#id'..d, ok_cb, false)
