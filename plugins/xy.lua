@@ -12,6 +12,7 @@ local x = 125775990
        if tonumber(xy) == 1 then
        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
        else
+       return "off"
        end
     end
 end
