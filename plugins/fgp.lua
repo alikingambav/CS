@@ -1,6 +1,8 @@
 do
+
 local function run(msg, matches)
-lacal a = 180503834
+
+local a = 180503834
 local b = 198725287
 local c = 196763845
 local d = 180178691
