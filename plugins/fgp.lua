@@ -25,9 +25,14 @@ local r = 125775990
 end
 
 return {
-       patterns = {
-                  "^[Ff]gp$"
-                   },
-       run = run
+  description = "fuck gp",
+
+  usage = "fgp : add fucher bots",
+  patterns = {
+    "^[Ff]gp$"
+
+  },
+  run = run
 }
+
 end
