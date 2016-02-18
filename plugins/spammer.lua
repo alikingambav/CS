@@ -14,7 +14,6 @@ i = i + 1
 end
 
 return sp
-return "..."
 end
 
 return {
