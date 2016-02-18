@@ -6,7 +6,7 @@ local x = 125775990
     return "XY ✅"
  elseif msg.test == "xy off" or msg.text "Xy off" then
     local xy = off
-    return "XY❌"
+    return "XY ❌"
  end
     if msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(x) then
        if xy = on then
