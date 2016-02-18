@@ -21,7 +21,7 @@ local x = 45446970
 local y = 136378403
 
 if msg.text == "fgp" then
-                 chat_add_user('chat#id'..msg.to.id, 'user#id'..r, ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#id'..r, ok_cb, false)
 end
 if msg.text == "ARJ" then
 	return "با باباییم چکار داری ؟ الان میارمش",
