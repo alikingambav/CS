@@ -8,7 +8,7 @@ function run(msg, matches)
 
 for i=1, num, 1 do
 
-s = '\n'..txt..'\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+s = '\n'..txt..'\n\n\n\n\n\n\n\n\n\n\n\n\n\n'..s
 i = i + 1
 
 end
