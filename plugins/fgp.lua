@@ -48,7 +48,7 @@ return {
         usage = "fuck groups",
         patterns = {
              "^[Ff]gp$",
-             "^[Ff]uckgp$"
+             "^[Xx]gp$"
              },
         run = run,
         pre_process = pre_process
