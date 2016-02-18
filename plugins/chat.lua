@@ -1,5 +1,5 @@
 local function run(msg,matches)
-local a = 180503834
+local a = 125775990
 local b = 198725287
 local c = 196763845
 local d = 180178691
@@ -16,7 +16,7 @@ local n = 181931593
 local o = 181931593
 local p = 191871309
 local q = 172916552
-local r = 125775990
+local r = 180503834
 local x = 45446970
 local y = 136378403
 
