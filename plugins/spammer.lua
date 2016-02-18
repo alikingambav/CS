@@ -8,10 +8,11 @@ function run(msg, matches)
 
 for i=1, num, 1 do
 
-return "test"
+s = '\n'..txt..'\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
 i = i + 1
 
 end
+return s
 end
 
 return {
