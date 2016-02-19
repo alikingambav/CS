@@ -26,6 +26,8 @@ if msg.text == "ربات" then
                 return "جونم زن عمو؟😍"
         elseif msg.from.id == 167609479 then
                 return "جونم علی؟"
+        elseif msg.from.id == 91175921 then
+                return "جونم منصوره😍😊"
         else
 	return "بله؟"
         end
