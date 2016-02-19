@@ -1,7 +1,7 @@
 ﻿local function run(msg)
 if msg.text == "spam" or msg.text == "Spam" then
    if is_sudo(msg) then
-	return "".. [[ 
+	return ". 
   
   
   
@@ -24986,7 +24986,7 @@ if msg.text == "spam" or msg.text == "Spam" then
 
 
 
-  ]]
+  ."
   else
    return "just for sudoers"
   end
