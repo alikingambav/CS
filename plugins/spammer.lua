@@ -8,7 +8,9 @@ function run(msg, matches)
   local sp = '😍'
 
 for i=1, num, 1 do
-
+if tonumber(i) == 13 then
+   return "13"
+end
 sp = txt..'\n\n\n'..sp
 i = i + 1
 
