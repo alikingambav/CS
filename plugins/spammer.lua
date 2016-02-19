@@ -12,8 +12,7 @@ sp = txt..'\n\n\n'..sp
 i = i + 1
 end
 
-return sp,
-return "test"
+return {sp, "test"}
 
 end
 
