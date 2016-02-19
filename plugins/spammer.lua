@@ -8,12 +8,11 @@ function run(msg, matches)
   local sp = '😍'
 
 for i=1, num, 1 do
-if tonumber(i) == 13 then
-   return "13"
-endif
 sp = txt..'\n\n\n'..sp
 i = i + 1
-
+if tonumber(i) ‹= 10 then
+  return i
+end
 end
 
 return sp
