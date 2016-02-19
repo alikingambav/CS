@@ -22,9 +22,16 @@ if msg.text == "ربات" then
                 return "جونم عمو😍"
         elseif msg.from.id == 178392470 then
                 return "جونم عشقم؟"
+        elseif msg.text.id == 186284458 then
+                return "جونم زن عمو؟😍"
         else
 	return "بله؟"
         end
+end
+if msg.text == "فدات بابات" then
+        if msg.from.id == 45446970 then
+        return "هستم باهات😉"
+end
 end
 if msg.text == "Salam" then
 	return "سلام علیکم ، فارسی تایپ کن"
