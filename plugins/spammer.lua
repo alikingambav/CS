@@ -10,12 +10,10 @@ function run(msg, matches)
 for i=1, num, 1 do
 sp = txt..'\n\n\n'..sp
 i = i + 1
-if tonumber(i) ‹= 10 then
-  return i
-end
 end
 
-return sp
+return sp,
+return "test"
 
 end
 
