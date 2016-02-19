@@ -1,22 +1,28 @@
-local function run(msg, matches)
- if not is_momod(msg) then 
-  return "For moderators only !"
- end
- if matches[1] then
- c = 1
-        print(c)
- end
-return
+local function mathjs(exp)
+  local url = 'http://api.mathjs.org/v1/'
+  url = url..'?expr='..URL.escape(exp)
+  local b,c = http.request(url)
+  local text = nil
+  if c == 200 then
+    text = '= '..b
+  
+  elseif c == 400 then
+    text = b
+  else
+    text = 'Error!'
+  end
+  return text
 end
 
+local function run(msg, matches)
+  return mathjs(matches[1])
+end
 
 return {
-  description = "",
-  usage = {""},
+  description = "Calculate Your Formulas",
+  usage = "/calc (formulas) : ex.formulas (3+7)*(2^3)/5",
   patterns = {
-    "^[!/]([Tt]est)";
-    
-
+    "^[Cc]al (.*)$"
   },
   run = run
 }
