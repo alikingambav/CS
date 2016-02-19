@@ -12,7 +12,13 @@ sp = txt..'\n\n\n'..sp
 i = i + 1
 end
 
-print sp
+return sp..[[
+
+
+Aa
+
+
+           ]].."bb"
 
 end
 
