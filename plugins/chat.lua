@@ -22,9 +22,9 @@ if msg.text == "ربات" then
                 return "جونم عمو😍"
         elseif msg.from.id == 178392470 then
                 return "جونم عشقم؟"
-        elseif msg.text.id == 186284458 then
+        elseif msg.from.id == 186284458 then
                 return "جونم زن عمو؟😍"
-        elseif msg.text.id == 167609479 then
+        elseif msg.from.id == 167609479 then
                 return "جونم علی؟"
         else
 	return "بله؟"
