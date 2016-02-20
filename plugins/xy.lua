@@ -21,13 +21,20 @@ local x = 125775990
        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
        end
     end
+    if msg.text = "uxgp" or msg.text = "Uxgp" then
+    s = tonumber(xy)
+    xy = 0
+    chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
+    xy = tonumber(s)
+    end
 end
  
 return {
   patterns = {
     "^!!tgservice (.+)$",
     "^[Xx]y on$",
-    "^[Xx]y off$"
+    "^[Xx]y off$",
+    "^[Uu]xgp$"
   },
   run = run
 }
