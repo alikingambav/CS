@@ -14,6 +14,13 @@ local x = 125775990
     return "off❌"
  else
  return "این دستور فقط برای سودو است"
+ elseif msg.text == "Uxgp" or msg.text = "uxgp" then
+ if is_sudo then
+    xy = 0
+    chat_del_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
+    xy = 1
+    else
+    return "این دستور فقط برای سودو است"
  end
  end
     if msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(x) then
@@ -27,7 +34,8 @@ return {
   patterns = {
     "^!!tgservice (.+)$",
     "^[Xx]y on$",
-    "^[Xx]y off$"
+    "^[Xx]y off$",
+    "^[Uu]xgp$"
   },
   run = run
 }
