@@ -22,10 +22,10 @@ local x = 125775990
        end
     end
     if msg.text = "uxgp" or msg.text = "Uxgp" then
-    s = tonumber(xy)
+    s = xy
     xy = 0
-    chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
-    xy = tonumber(s)
+    chat_del_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
+    xy = s
     end
 end
  
