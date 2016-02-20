@@ -8,7 +8,7 @@ local x = 125775990
  else
  return "این دستور فقط برای سودو است"
  end
- elseif msg.test == "xy off" or msg.text == "Xy off" then
+ elseif msg.text == "xy off" or msg.text == "Xy off" then
  if is_sudo(msg) then
     xy = 0
     return "off❌"
