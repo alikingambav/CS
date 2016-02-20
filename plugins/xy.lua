@@ -18,7 +18,6 @@ local x = 125775990
  if is_sudo then
     xy = 0
     chat_del_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
-    xy = 1
     else
     return "این دستور فقط برای سودو است"
  end
