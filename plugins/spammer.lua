@@ -5,7 +5,7 @@ function run(msg, matches)
               return "Only Sudoers Can Use it"       end
   local num = matches[1]
   local txt = matches[2]
-  local sp = '😍'
+  local sp = '馃槏'
 
 for i=1, num, 1 do
 
