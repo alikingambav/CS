@@ -20,14 +20,6 @@ local x = 125775990
        if tonumber(xy) == 1 then
        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
        end
-    elseif msg.text = "uxgp" or msg.text = "Uxgp" then
-    if tonumber(xy) == 1 then
-    xy = 0
-    chat_del_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
-    xy = 1
-    else
-    chat_del_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
-    end
     end
 end
  
@@ -35,8 +27,7 @@ return {
   patterns = {
     "^!!tgservice (.+)$",
     "^[Xx]y on$",
-    "^[Xx]y off$",
-    "^[Uu]xgp$"
+    "^[Xx]y off$"
   },
   run = run
 }
