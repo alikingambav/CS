@@ -9,7 +9,7 @@ function run(msg, matches)
 
 for i=1, num, 1 do
 
-sp = txt..'\n'..sp
+sp = txt..'\n\n'..sp
 i = i + 1
 
 end
