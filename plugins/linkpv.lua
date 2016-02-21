@@ -7,10 +7,11 @@ local function run(msg, matches)
       local group_link = data[tostring(msg.to.id)]['settings']['set_link']
       if not group_link then 
         return "Create a link first !"
-      end
+      else
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
      send_large_msg('user#id'..msg.from.id, "Group link:\n"..group_link)
     end
+end
 end
 return {
   patterns = {
