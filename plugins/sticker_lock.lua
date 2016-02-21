@@ -1,7 +1,7 @@
 local function run(msg, matches)
 
 
-if not is_momod(msg) then
+if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
 	return "Mods Only!"
 	else
     if matches[1] == 'sticker' or matches[1] == 'Sticker' then
