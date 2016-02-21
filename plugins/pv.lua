@@ -1,13 +1,4 @@
 
-local function pv(extra, success, result)
-if extra.get_cmd == "pv" or extra.get_cmd == "Pv" then
-  if result.id = extra.from_id then
-   return "برم پی وی خودم؟ 😕"
-  else
-    send_large_msg(result.id, matches[2])
-  end
-end
-
 
 
 local function run(msg, matches)
