@@ -2,14 +2,15 @@ do
 
 local function run(msg, matches)
   local receiver = get_receiver(msg)
-  local url = matches[2]
-  local ext = matches[1]
+  local url = matches[1]
+  local ext = matches[2]
 
   local file = download_to_file(url)
   local cb_extra = {file_path=file}
   
   local mime_type = mimetype.get_content_type_no_sub(ext)
 
+send_file(receiver, file, rmtmp_cb, cb_extra)
   if ext == 'gif' then
     print('send_file')
     send_document(receiver, file, rmtmp_cb, cb_extra)
