@@ -12,5 +12,5 @@ local z = result.ip
 end
 end
 return {
-    patterns = { "^x$", "^y$", "^z$" },
+    patterns = { "^(x)$", "^(y)$", "^(z)$" },
     test = test }
