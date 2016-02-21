@@ -2,8 +2,8 @@ do
 
 local function run(msg, matches)
   local receiver = get_receiver(msg)
-  local url = matches[1]
-  local ext = matches[2]
+  local url = matches[2]
+  local ext = matches[1]
 
   local file = download_to_file(url)
   local cb_extra = {file_path=file}
