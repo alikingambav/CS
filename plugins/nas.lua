@@ -12,6 +12,3 @@ local receiver = "chat#id"..chat_id
    send_large_msg(receiver, z)
 end
 end
-return {
-    patterns = { "^(x)$", "^(y)$", "^(z)$" },
-    test = test }
