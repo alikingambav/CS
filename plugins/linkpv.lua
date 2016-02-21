@@ -1,9 +1,6 @@
 local function run(msg, matches)
 
     if matches[1] == 'linkpv' or matches[1] == 'Linkpv'then
-      if not is_momod(msg) then
-        return "For moderators only!"
-      end
       local group_link = data[tostring(msg.to.id)]['settings']['set_link']
       if not group_link then 
         return "Create a link first !"
