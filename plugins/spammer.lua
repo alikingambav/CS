@@ -18,7 +18,7 @@ end
 
 return {
     patterns = {
-      "^[Ss]pam (.*) (.*)$"
+      "^[Ss]pam (%d+) (.*)$"
     },
     run = run,
 }
