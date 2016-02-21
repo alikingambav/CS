@@ -16,5 +16,3 @@ return {
   run = run
 }
 --Sends Pm To Users Pv With Fuck Emoji😂😂
---https://github.com/ThisIsArman
-    --Telegram.me/ThisIsArman
