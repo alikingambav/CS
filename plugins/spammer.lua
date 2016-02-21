@@ -8,12 +8,10 @@ function run(msg, matches)
   local sp = '😍'
 
 for i=1, num, 1 do
-print('ss')
 sp = txt..'\n\n'..sp
 i = i + 1
-
 end
-
+print('a')
 return sp
 
 end
