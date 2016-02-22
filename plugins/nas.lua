@@ -9,14 +9,13 @@ end
 
 local function run(msg)
 local x = 1
-local y = msg.reply_id
 if msg.text == "x" then
    if type(msg.reply_id) ~= "nil" then
    return x
    end
 elseif msg.text == "y" then
    if type(msg.reply_id) ~= "nil" then
-   return y
+   msgr = get_message(msg.reply_id,test, false)
    end
 end
 end
