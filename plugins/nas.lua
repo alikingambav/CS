@@ -1,14 +1,10 @@
-
-local function test(exstra, success, result)
-local x = result.id
-local y = result.username
-local z = result.ip
-local receiver = "chat#id"..chat_id
-  if extra.get_cmd == "x" then
-   send_large_msg(receiver, x)
-  elseif extra.get_cmd == "y" then
-   send_large_msg(receiver, y)
-  elseif extra.get_cmd == "z" then
-   send_large_msg(receiver, z)
+local function run(msg)
+local x = msg.reply_id
+if msg.text == "x" then
+   if type(msg.reply_id) ~= "nil" then
+   return x
+   end
 end
 end
+return {
+patterns = { "^x$" }, run = run }
