@@ -1,5 +1,5 @@
 local function run(msg)
-local x = msg.reply_id
+local x = result.id
 if msg.text == "x" then
    if type(msg.reply_id) ~= "nil" then
    return x
