@@ -3,7 +3,7 @@ local un = result.username
 local id = result.id
 local receiver = "chat#id"..chat_id
 if get_cmd = "y" then
-return send_large_msg(receiver, y)
+return send_large_msg(receiver, id)
 end
 end
 
