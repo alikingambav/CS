@@ -116,7 +116,11 @@ if msg.text == "جووون" then
         return "زاااارت"
 end
 if msg.text == "عاشقتم" then
+   if msg.from.id == 91175921 then
+        return "منم عاشقتم نفس بانو 😍😘"
+   else
         return "زاااااارتتتتت"
+end
 end
 if msg.text == "😍😍😍😍" then
         return "زاااارتتتت"
