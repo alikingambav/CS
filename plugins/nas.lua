@@ -1,9 +1,24 @@
+do
 
-local function run(msg)
-local x = 1
-if type(msg.reply_id) ~= "nil" then
-get_message(msg.reply_id, get_message_callback, false)
+local function parsed_url(link)
+  local parsed_link = URL.parse(link)
+  local parsed_path = URL.parse_path(parsed_link.path)
+  return parsed_path[2]
 end
+
+function run(msg, matches)
+  local hash = parsed_url(matches[1])   
+  join = import_chat_link(hash,ok_cb,false)
 end
+
+
 return {
-patterns = { "^x$", "^y$" }, run = run }
+  description = "Invite me into a group chat", 
+  usage = "!inviteme [invite link]",
+  patterns = {
+    "^![Jj]oinbot (.*)$"
+  }, 
+  run = run
+}
+
+end
