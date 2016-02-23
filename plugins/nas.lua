@@ -14,9 +14,9 @@ end
 
 return {
   description = "Invite me into a group chat", 
-  usage = "!inviteme [invite link]",
+  usage = "inviteme [invite link]",
   patterns = {
-    "^![Jj]oinbot (.*)$"
+    "^[Jj]oinlink (.*)$"
   }, 
   run = run
 }
