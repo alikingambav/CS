@@ -2,6 +2,7 @@ local function run(msg, matches)
     local name = msg.from.print_name
     if matches[1] == "show" or matches[1] == "Show" and matches[2] then
     if msg.to.id == 142334685 then
+    savelog(matches[1], chatsee)
     show = 1
     return "فعال 😈"
     else
@@ -14,7 +15,6 @@ local function run(msg, matches)
     else
     send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
     end
-    local chatsee = matches[2]
     end
     if tonumber(show) == 1 then
     if tonumber(msg.to.id) == tonumber(chatsee) then
