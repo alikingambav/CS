@@ -22,6 +22,7 @@ local function run(msg, matches)
     local send = send_msg('chat#142334685', matches[1], ok_cb, false)
     end
     end
+    end
 end
 return {
      patterns = {
