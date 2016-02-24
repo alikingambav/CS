@@ -18,6 +18,7 @@ local function run(msg, matches)
     end
     else
     if tonumber(show) == 1 then
+    if msg.to.id == chatseeid then
     local send = send_msg('chat#142334685', matches[1], ok_cb, false)
     end
     end
