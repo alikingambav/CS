@@ -19,9 +19,7 @@ local function run(msg, matches)
     if maches[1] then
     if tonumber(msg.to.id) == tonumber(chatseeid) then
     if tonumber(show) == 1 then
-    chat = matches[1]
-    txt = msg.from.print_name..'\n___________\n'..chat
-    send_msg('chat#142334685', txt, ok_cb, false)
+    send_msg('chat#142334685', msg.from.print_name..'\n___________\n'..matches[1], ok_cb, false)
     end
     end
     end
