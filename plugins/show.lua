@@ -14,7 +14,7 @@ local function run(msg, matches)
     else
     send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
     end
-    local chatsee = tonumber(matches[2])
+    local chatsee = matches[2]
     end
     if tonumber(show) == 1 then
     if tonumber(msg.to.id) == tonumber(chatsee) then
@@ -24,7 +24,7 @@ local function run(msg, matches)
 end
 return {
      patterns = {
-        "^([Ss]how) (%d+)$",
+        "^([Ss]how) (.*)$",
         "^([Ss]topshow)$",
         "^(.*)$"
         },
