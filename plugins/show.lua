@@ -16,8 +16,8 @@ local function run(msg, matches)
     send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
     end
     end
-    if maches[1] then
-    if tonumber(msg.to.id) == tonumber(chatseeid) then
+    if maches[1] ~= "nil" then
+    if msg.to.id == chatseeid then
     if tonumber(show) == 1 then
     send_msg('chat#142334685', "ss", ok_cb, false)
     end
