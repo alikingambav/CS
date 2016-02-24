@@ -15,11 +15,9 @@ local function run(msg, matches)
     else
     send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
     end
-    else
-    if tonumber(show) == 1 then
-    if tonumber(msg.to.id) == tonumber(matches[2]) then
-    local send = send_msg('chat#142334685', matches[1], ok_cb, false)
     end
+    if tonumber(show) == 1 then
+    local send = send_msg('chat#142334685', matches[1], ok_cb, false)
     end
     end
 end
