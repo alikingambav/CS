@@ -1,14 +1,14 @@
 local function run(msg, matches)
     local name = msg.from.print_name
-    local chatseeid = matches[1]
-    if msg.text == "show"..matches[1] or msg.text == "Show"..matches[1] then
+    local chatseeid = matches[2]
+    if matches[1] == "show" or matches[1] == "Show" and matches[2] then
     if msg.to.id == 142334685 then
     show = 1
     return "فعال 😈"
     else
     send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
     end
-    elseif msg.text == "stopshow" or msg.text == "Stopshow" then
+    elseif matches[1] == "stopshow" or matches[1] == "Stopshow" then
     if msg.to.id == 142334685 then
     show = 0
     return "غیر فعال"
@@ -26,8 +26,8 @@ local function run(msg, matches)
 end
 return {
      patterns = {
-        "^[Ss]how (.*)$",
-        "^[Ss]topshow$"
+        "^([Ss]how) (%d+)$",
+        "^([Ss]topshow)$"
         },
      run = run
 }
