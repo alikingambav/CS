@@ -147,6 +147,7 @@ if msg.text == "تو باید مال من باشی ... تو لایق بهتری�
 end
 if msg.text == "سولماز" then
         return "هعیییییی"
+end
 if msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(x) then
         return "سلام بابایی 😍 ، خوش اومدی ..."
 elseif msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(y) then
