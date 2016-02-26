@@ -18,7 +18,7 @@ if msg.text == "اوره" then
 end
 if msg.text == "ربات" then
         if msg.from.id == 163203426 then
-                return "جووونم نفسم ؟ بگو سولمازی 😍"
+                return "هوم؟"
         elseif msg.from.id == 45446970 then
                 return "جونم بابایی؟"
         elseif msg.from.id == 136378403 then
@@ -80,7 +80,7 @@ if msg.text == "Bye" then
 end
 if msg.text == "گه نخور" then
         if msg.from.id == 163203426 then
-               return "چشم گلم"
+               return "خفه باو"
         else
         return "من تو رو نمیخورم"
         end
@@ -146,8 +146,7 @@ if msg.text == "تو باید مال من باشی ... تو لایق بهتری�
         return "زززززززاااااااااااررررررررررتتتتتتتتتت...... ینی واااااقعاااااااا زااااارت.......یکی سیفونو بکشههههه"
 end
 if msg.text == "سولماز" then
-        return "عشق منو چکارش داری؟😡"
-end
+        return ""
 if msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(x) then
         return "سلام بابایی 😍 ، خوش اومدی ..."
 elseif msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(y) then
