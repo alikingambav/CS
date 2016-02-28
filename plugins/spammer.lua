@@ -5,14 +5,11 @@ function run(msg, matches)
               return "Only Sudoers Can Use it"       end
   local num = matches[1]
   local txt = matches[2]
-  local sp = '😍'
 
 for i=1, num, 1 do
-sp = txt..'\n\n'..sp
+send_msg(msg.to.id, txt, ok_cb, false)
 i = i + 1
 end
-print('a')
-return sp
 
 end
 
