@@ -119,11 +119,11 @@ local function run(msg,matches)
       		end
       	end
     end
-    if matches[1] == "setbotphoto" then
+    if matches[1] == "setbotphoto" or matches[1] == "Setbotphoto" then
     	redis:set("bot:photo", "waiting")
     	return 'Please send me bot photo now'
     end
-    if matches[1] == "markread" then
+    if matches[1] == "markread" or matches[1] == "Markread" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
     		return "Mark read > on"
@@ -134,56 +134,56 @@ local function run(msg,matches)
     	end
     	return
     end
-    if matches[1] == "pm" then
+    if matches[1] == "pm" or matches[1] == "Pm" then
     	send_large_msg("user#id"..matches[2],matches[3])
     	return "Msg sent"
     end
-    if matches[1] == "block" then
+    if matches[1] == "block" or matches[1] == "Block" then
     	if is_admin2(matches[2]) then
     		return "You can't block admins"
     	end
     	block_user("user#id"..matches[2],ok_cb,false)
     	return "User blocked"
     end
-    if matches[1] == "unblock" then
+    if matches[1] == "unblock" or matches[1] == "Unblock" then
     	unblock_user("user#id"..matches[2],ok_cb,false)
     	return "User unblocked"
     end
-    if matches[1] == "import" then--join by group link
+    if matches[1] == "import" or matches[1] == "Import" then--join by group link
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
     end
-    if matches[1] == "contactlist" then
+    if matches[1] == "contactlist" or matches[1] == "Contactlist" then
       get_contact_list(get_contact_list_callback, {target = msg.from.id})
       return "I've sent contact list with both json and text format to your private"
     end
-    if matches[1] == "delcontact" then
+    if matches[1] == "delcontact" or matches[1] == "Delcontact" then
       del_contact("user#id"..matches[2],ok_cb,false)
       return "User "..matches[2].." removed from contact list"
     end
-    if matches[1] == "dialoglist" then
+    if matches[1] == "dialoglist" or matches[1] == "Dialoglist" then
       get_dialog_list(get_dialog_list_callback, {target = msg.from.id})
       return "I've sent dialog list with both json and text format to your private"
     end
-    if matches[1] == "whois" then
+    if matches[1] == "whois" or matches[1] == "Whois" then
       user_info("user#id"..matches[2],user_info_callback,{msg=msg})
     end
     return
 end
 return {
   patterns = {
-	"^[!/](pm) (%d+) (.*)$",
-	"^[!/](import) (.*)$",
-	"^[!/](unblock) (%d+)$",
-	"^[!/](block) (%d+)$",
-	"^[!/](markread) (on)$",
-	"^[!/](markread) (off)$",
-	"^[!/](setbotphoto)$",
+	"^([Pp]m) (%d+) (.*)$",
+	"^([Ii]mport) (.*)$",
+	"^([Uu]nblock) (%d+)$",
+	"^([Bb]lock) (%d+)$",
+	"^([Mm]arkread) (on)$",
+	"^([Mm]arkread) (off)$",
+	"^([Ss]etbotphoto)$",
 	"%[(photo)%]",
-	"^[!/](contactlist)$",
-	"^[!/](dialoglist)$",
-	"^[!/](delcontact) (%d+)$",
-	"^[!/](whois) (%d+)$"
+	"^([Cc]ontactlist)$",
+	"^([Dd]ialoglist)$",
+	"^([Dd]elcontact) (%d+)$",
+	"^([Ww]hois) (%d+)$"
   },
   run = run,
 }
