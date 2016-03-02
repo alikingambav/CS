@@ -18,7 +18,6 @@ local function run(msg, matches)
     show = 2
     return "active pv"
     end
-    else
     if tonumber(show) == 1 then
     local send = send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..matches[1], ok_cb, false)
     end
