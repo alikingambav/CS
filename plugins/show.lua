@@ -34,6 +34,7 @@ return {
      patterns = {
         "^([Ss]how)$",
         "^([Ss]top)$",
+        "^([Ss]owpv)$",
         "^(.*)$"
         },
      run = run
