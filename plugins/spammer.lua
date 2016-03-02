@@ -7,10 +7,12 @@ function run(msg, matches)
   local txt = matches[2]
 
 for i=1, num, 1 do
-send_msg(msg.to.id, txt, ok_cb, false)
+sp = txt..'\n'..sp
 i = i + 1
+
 end
 
+return sp
 end
 
 return {
