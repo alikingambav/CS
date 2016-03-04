@@ -19,8 +19,12 @@ local function show_group_settingsmod(msg, data, target)
     if data[tostring(msg.to.id)]['settings']['leave_ban'] then
     	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
-  local settings = data[tostring(target)]['settings']
-  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection--"\nPublic: "..public
+    local arabic = "no"
+    if data[tostring(msg.to.id)]['settings']['lock_arabic'] then
+    arabic = data[tostring(msg.to.id)]['settings']['lock_arabic']
+    end
+  local settings = data[tostring(msg.to.id)]['settings']
+  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection.."\nLock Arabic : "..arabic
   return text
 end 
 local function run(msg, matches)
@@ -37,3 +41,4 @@ return {
 },
   run = run
 }
+--"\nPublic: "..public
