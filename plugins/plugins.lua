@@ -152,6 +152,7 @@ end
 
 local function run(msg, matches)
   -- Show the available plugins 
+if is_momod(msg) then
   if matches[1] == 'plugins' or matches[1] == 'Plugins' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return list_all_plugins()
   end
@@ -192,6 +193,9 @@ local function run(msg, matches)
   if matches[1] == 'reload' or matches[1] == 'Reload' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return reload_plugins(true)
   end
+  else
+  return "این دستور برای مدیر هاست"
+end
 end
 
 return {
