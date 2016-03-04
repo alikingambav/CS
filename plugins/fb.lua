@@ -16,7 +16,9 @@ local fuses = '!printf user#id' .. msg.from.id
 
         if bannedidone or bannedidtwo or bannedidthree then                    --for banned people
                 return 'You are banned to send a feedback'
- else
+ elseif msg.from.id == 103631007 then
+    return "این دستور واسه تو یکی کار نمیکنه👿"
+else
 
 
                  local sends0 = send_msg('chat#105261725', fuse, ok_cb, false)
