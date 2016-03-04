@@ -11,13 +11,17 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
           save_data(_config.moderation.data, data)
         end
         return '[Alredy Enabled]\nSticker Sender will be warned first, then kicked for second Sticker.'
+        end
       elseif matches[1] == 'lock' or matches[1] == 'Lock' then
+        if matches[2] == 'sticker' then
         if welcome_stat ~= 'yes' then
           data[tostring(msg.to.id)]['settings']['sticker'] = 'yes'
           save_data(_config.moderation.data, data)
         end
         return '[Already Enabled]Sticker Sender will be kicked!'
+        end
       elseif matches[1] == 'Unlock' or matches[1] == 'unlock' then
+           if matches[2] == 'sticker' then
         if welcome_stat == 'no' then
           return '[Already Disabled]Nothing Will Happend If Sticker Sent!'
         else
@@ -33,7 +37,9 @@ end
 
 return {
      patterns = {
-         "^([Ll]ock) (.*)$"
+         "^([Ll]ock) (sticker)$",
+         "^([Uu]nlock) (sticker)$",
+         "^([Ww]arn) (sticker)$",
      },
 run = run,
 pre_process = pre_process
