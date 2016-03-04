@@ -17,7 +17,10 @@ if is_momod(msg) then -- Ignore mods,owner,admins
     end
    end
   return
-end 
+end
+local function cron()
+  antilink = {} -- Clear antiarabic table 
+end
 return {
 patterns = {
 ".com",
