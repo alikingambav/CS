@@ -1220,7 +1220,7 @@ return {
   "^([Ss]etgpowner) (%d+) (%d+)$",-- (group id) (owner id)
   "^([Uu]nlock) (.*)$",
   "^([Ss]etflood) (%d+)$",
-  "^([Pp]ublic) (.*)$",
+--"^([Pp]ublic) (.*)$",
   "^([Mm]odlist)$",
   "^([Nn]ewlink)$",
   "^([Ll]ink)$",
