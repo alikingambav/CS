@@ -23,12 +23,14 @@ local function show_group_settingsmod(msg, data, target)
   local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection--"\nPublic: "..public
   return text
 end 
+local function run(msg, matches)
+local name_log = user_print_name(msg.from)
 if matches[1] == 'settings' or matches[1] == 'Settings' then
       local target = msg.to.id
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group settings ")
       return show_group_settingsmod(msg, data, target)
     end	
-
+end
 return {
   patterns = {
 "^([Ss]ettings)$"
