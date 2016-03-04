@@ -1010,7 +1010,7 @@ local function run(msg, matches)
    end
     
 
-  --[[if matches[1] == 'public' or matches[1] == 'Public' then
+    if matches[1] == 'public' or matches[1] == 'Public' then
     local target = msg.to.id
     if matches[2] == 'yes' then
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: public")
@@ -1020,7 +1020,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: not public")
       return unset_public_membermod(msg, data, target)
     end
-  end]]
+  end
 
     if matches[1] == 'newlink' or matches[1] == 'Newlink' and not is_realm(msg) then
       if not is_momod(msg) then
@@ -1220,7 +1220,7 @@ return {
   "^([Ss]etgpowner) (%d+) (%d+)$",-- (group id) (owner id)
   "^([Uu]nlock) (.*)$",
   "^([Ss]etflood) (%d+)$",
--- "^([Pp]ublic) (.*)$",
+  "^([Pp]ublic) (.*)$",
   "^([Mm]odlist)$",
   "^([Nn]ewlink)$",
   "^([Ll]ink)$",
