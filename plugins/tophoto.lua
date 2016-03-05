@@ -15,13 +15,11 @@ end
 local function run(msg,matches)
     local receiver = get_receiver(msg)
     local group = msg.to.id
-    if msg.media then
-      	if msg.media.type == 'document' and is_momod(msg) and redis:get("sticker:photo") then
+      	if msg.from.type == 'document' and is_momod(msg) and redis:get("sticker:photo") then
       		if redis:get("sticker:photo") == 'waiting' then
         		load_document(msg.id, tosticker, msg)
       		end
       	end
-    end
     if matches[1] == "tophoto" and is_momod(msg) then
     	redis:set("sticker:photo", "waiting")
     	return 'Please send your sticker now'
