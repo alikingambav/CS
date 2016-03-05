@@ -5,7 +5,7 @@ local function tosticker(msg, success, result)
     print('File downloaded to:', result)
     os.rename(result, file)
     print('File moved to:', file)
-    send_photo(get_receiver(msg), file, ok_cb, false)
+    send_document(get_receiver(msg), file, ok_cb, false)
     redis:del("sticker:photo")
   else
     print('Error downloading: '..msg.id)
