@@ -1,6 +1,4 @@
 local function run(msg, matches)
-local data = load_data(_config.moderation.data)
-local locklink = data[tostring(msg.to.id)]['settings']['lock_link']
 if not is_momod(msg) then
 	return "Mods Only!"
 	else
