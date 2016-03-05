@@ -21,12 +21,22 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
         end
       end
 end
+if not is_momod(msg) and msg.type = 'chat' then
+chat_del_user('chat#id'..msg.to.id, 'user#id'..msg.from.id, ok_cb, true)
+return  'لینک ممنوعه 🚫'
+     end 
+
 end
 
 return {
      patterns = {
          "^([Ll]ock) (link)$",
-         "^([Uu]nlock) (link)$"
+         "^([Uu]nlock) (link)$",
+         ".com",
+         "http://",
+         "https://",
+         "adf.ly"
+
      },
 run = run,
 pre_process = pre_process
