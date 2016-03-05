@@ -19,7 +19,7 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
         else
           data[tostring(msg.to.id)]['settings']['lock_link'] = 'no'
           save_data(_config.moderation.data, data)
-          return 'Nothing Will Happend If Sticker Sent! '
+          return 'link unlocked'
         end
       end
     end
