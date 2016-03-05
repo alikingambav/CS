@@ -10,7 +10,7 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
           data[tostring(msg.to.id)]['settings']['sticker'] = 'warn'
           save_data(_config.moderation.data, data)
         end
-        return '[Alredy Enabled]\nSticker Sender will be warned first, then kicked for second Sticker.'
+        return ' Sender will be warned first, then kicked for second Sticker.'
         end
       elseif matches[1] == 'lock' or matches[1] == 'Lock' then
         if matches[2] == 'sticker' then
@@ -18,7 +18,7 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
           data[tostring(msg.to.id)]['settings']['sticker'] = 'yes'
           save_data(_config.moderation.data, data)
         end
-        return '[Already Enabled]Sticker Sender will be kicked!'
+        return 'Sticker locked'
         end
       elseif matches[1] == 'Unlock' or matches[1] == 'unlock' then
            if matches[2] == 'sticker' then
@@ -27,7 +27,7 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
         else
           data[tostring(msg.to.id)]['settings']['sticker'] = 'no'
           save_data(_config.moderation.data, data)
-          return 'Nothing Will Happend If Sticker Sent! '
+          return 'Sticker unlocked'
         end
       end
     end
