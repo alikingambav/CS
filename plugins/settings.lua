@@ -29,7 +29,7 @@ local function show_group_settingsmod(msg, data, target)
     end
     local link = "no"
    if data[tostring(msg.to.id)]['settings']['lock_link'] then
-    link = data[tostring(msg.to.id)]['settings']['sticker']
+    link = data[tostring(msg.to.id)]['settings']['lock_link']
     end
   local settings = data[tostring(msg.to.id)]['settings']
   local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nLock bot : "..bots_protection.."\nLock Arabic : "..arabic.."\nLock sticker : "..sticker.."\nLock link : "..link.."\nflood sensitivity : "..NUM_MSG_MAX--.."\nPublic : "..public
