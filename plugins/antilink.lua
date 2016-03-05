@@ -32,5 +32,4 @@ patterns = {
 "adf.ly"
 },
  run = run,
- cron = cron
 }
