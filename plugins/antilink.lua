@@ -21,25 +21,12 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
         end
       end
 end
-if data[tostring(msg.to.id)]['settings']['lock_link'] then
-    if data[tostring(msg.to.id)]['settings']['lock_link'] == 'yes' then
-if not is_momod(msg) and msg.type = 'chat' then
-chat_del_user('chat#id'..msg.to.id, 'user#id'..msg.from.id, ok_cb, true)
-return  'لینک ممنوعه 🚫'
-     end 
-end
-end
 end
 
 return {
      patterns = {
          "^([Ll]ock) (link)$",
-         "^([Uu]nlock) (link)$",
-         "(.com)",
-         "(http://)",
-         "(https://)",
-         "(adf.ly)"
-
+         "^([Uu]nlock) (link)$"
      },
 run = run,
 pre_process = pre_process
