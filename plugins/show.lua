@@ -18,6 +18,7 @@ local function run(msg, matches)
           if msg.to.id == 142334685 then
             show = 0
             redis:del("id")
+            redis:del("ansmod")
             return "غیر فعال"
           else
             send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
@@ -40,13 +41,13 @@ local function run(msg, matches)
     if tonumber(show) == 1 then
       send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..matches[1], ok_cb, false)
     elseif tonumber(show) == 2 then
-      if msg.to.id == redis:get("id") then
+      if msg.to.id == tonumber(redis:get("id")) then
         send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..matches[1], ok_cb, false)
       end
     end
     if msg.to.id == 142334685 then
       if ansmod == 1 then
-        if msg.from.id == redis:get("ansmod") then
+        if msg.from.id == tonumber(redis:get("ansmod")) then
           if matches[1] == "ansmod off" or matches[1] == "Ansmod off" then
             redis:del("ansmod")
             ansmod = 0
