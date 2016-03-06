@@ -1,5 +1,5 @@
 local function run(msg, matches)
-    if matches[1] == "show" or matches[1] == "Show and not matches[2] then
+    if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
             if msg.to.id == 142334685 then
               show = 1
               return "فعال 😈"
