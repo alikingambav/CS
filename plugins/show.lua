@@ -95,6 +95,8 @@ return {
      patterns = {
         "^([Ss]how)$",
         "^([Ss]how) (%d+)$",
+        "^([Ss]howpv)$",
+        "^([Ss]howpv) (%d+)$",
         "^([Ss]top)$",
         "^([Aa]nsmod)$",
         "^([Aa]nsmod off)$",
