@@ -47,7 +47,7 @@ local function run(msg, matches)
           ansmod = 0
           return "off"
         else
-          send_msg('chat#'..redis:get("id"), msg.from.text, ok_cb, false)
+          send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
         end
       end
     end
