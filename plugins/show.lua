@@ -14,7 +14,7 @@ local function run(msg, matches)
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-    elseif matches[1] == "Showpv" or matches[1] == "showpv" then
+    elseif matches[1] == "Showpv" or matches[1] == "showpv" not matches[2] then
           if msg.to.id == 142334685 then
               redis:set("id", matches[2])
               show = 3
