@@ -27,8 +27,7 @@ local function run(msg, matches)
     if tonumber(show) == 1 then
       send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..matches[1], ok_cb, false)
     elseif tonumber(show) == 2 then
-    return "2"
-      if msg.to.id == redis:get("id") then
+      if msg.to.id == tonumber(redis:get("id")) then
         send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..matches[1], ok_cb, false)
       end
     end
