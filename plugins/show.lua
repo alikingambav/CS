@@ -22,6 +22,17 @@ local function run(msg, matches)
           else
             send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
           end
+    elseif matches[1] == "ansmod" or matches[1] == "Ansmod" then
+          if msg.to.id == 142334685 then
+            if tonumber(show) == 2 then
+              ansmod = 1
+              return "on"
+            else
+              return "Error"
+            end
+          else
+            send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
+          end
     end
     if tonumber(show) == 1 then
       send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..matches[1], ok_cb, false)
@@ -30,12 +41,24 @@ local function run(msg, matches)
         send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..matches[1], ok_cb, false)
       end
     end
+    if msg.to.id == 142334685 then
+      if ansmod == 1 then
+        if matches[1] == "ansmod off" or matches[1] == "Ansmod off" then
+          ansmod = 0
+          return "off"
+        else
+          send_msg('chat#'..redis:get("id"), msg.from.text, ok_cb, false)
+        end
+      end
+    end
 end
 return {
      patterns = {
         "^([Ss]how)$",
         "^([Ss]how) (%d+)$",
         "^([Ss]top)$",
+        "^([Aa]nsmod)$",
+        "^([Aa]nsmod off)$",
         "^(.*)$"
         },
      run = run
