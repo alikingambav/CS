@@ -96,7 +96,7 @@ return {
         "^([Ss]how)$",
         "^([Ss]how) (%d+)$",
         "^([Ss]howpv)$",
-        "^([Ss]howpv) (%d+)$",
+        "^([Ss]howpv) (.*)$",
         "^([Ss]top)$",
         "^([Aa]nsmod)$",
         "^([Aa]nsmod off)$",
