@@ -43,7 +43,11 @@ local function run(msg, matches)
           if is_sudo(msg) then
             if ansmod == 0 then
               if msg.to.id == 142334685 then
-                if tonumber(show) == 2 or tonumber(show) == 4 then
+                if tonumber(show) == 2 then
+                  redis:set("ansmod", msg.from.id)
+                  ansmod = 1
+                  return "on"
+                elseif tonumber(show) == 4 then
                   redis:set("ansmod", msg.from.id)
                   ansmod = 1
                   return "on"
@@ -63,11 +67,11 @@ local function run(msg, matches)
         send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..matches[1], ok_cb, false)
       end
     elseif tonumber(show) == 3 then
-      if msg.to.type ~= 'chat' then
+      if msg.to.type == 'user' then
         send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.id'\n___________\n'..matches[1], ok_cb, false)
       end
     elseif tonumber(show) == 4 then
-      if msg.to.type ~= 'chat' then
+      if msg.to.type == 'user' then
         if msg.from.id == tonumber(redis:get("id")) then
           send_msg('chat#142334685', matches[1], ok_cb, false)
         end
