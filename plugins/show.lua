@@ -1,6 +1,12 @@
 local function run(msg, matches)
-    if matches[1] == "show" or matches[1] == "Show" then
-          if matches[2] ~= 'nil'then
+    if matches[1] == "show" or matches[1] == "Show and not matches[2] then
+            if msg.to.id == 142334685 then
+              show = 1
+              return "فعال 😈"
+            else
+              send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
+            end
+    elseif matches[1] == "show" or matches[1] == "Show" and matches[2] ~= 'nil' then
             if msg.to.id == 142334685 then
               redis:set("id", matches[2])
               show = 2
@@ -8,14 +14,6 @@ local function run(msg, matches)
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-          else
-            if msg.to.id == 142334685 then
-              show = 1
-              return "فعال 😈"
-            else
-              send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
-            end
-          end
     elseif matches[1] == "stop" or matches[1] == "Stop" then
           if msg.to.id == 142334685 then
             show = 0
