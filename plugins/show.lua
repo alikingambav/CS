@@ -7,7 +7,7 @@ local function run(msg, matches)
           else
             send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
           end
-    elseif matches[1] == "stop" or matches[1] == "Stop" and matches[2] ~= 'nil'then
+    elseif matches[1] == "stop" or matches[1] == "Stop" and matches[2] ~= 'nil' then
             redis:set("id", matches[2])
             show = 2
             return "فعال 😈"
