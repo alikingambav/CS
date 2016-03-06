@@ -48,6 +48,7 @@ local function run(msg, matches)
           return "off"
         else
           send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
+          return "✔"
         end
       end
     end
