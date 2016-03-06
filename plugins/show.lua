@@ -6,7 +6,7 @@ local function run(msg, matches)
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-    elseif matches[1] == "show" or matches[1] == "Show" and matches[2] ~= 'nil' then
+    elseif matches[1] == "show" or matches[1] == "Show" and matches[2] then
             if msg.to.id == 142334685 then
               redis:set("id", matches[2])
               show = 2
@@ -21,8 +21,8 @@ local function run(msg, matches)
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-    elseif matches[1] == "showpv" or matches[1] == "Showpv" and matches[2] ~= 'nil' then
-          if msg.to.id == 142334685 then
+    elseif matches[1] == "showpv" or matches[1] == "Showpv" and matches[2] then
+            if msg.to.id == 142334685 then
               redis:set("id", matches[2])
               show = 4
               return "فعال 😈"
@@ -96,7 +96,7 @@ return {
         "^([Ss]how)$",
         "^([Ss]how) (%d+)$",
         "^([Ss]howpv)$",
-        "^([Ss]howpv) (.*)$",
+        "^([Ss]howpv) (%d+)$",
         "^([Ss]top)$",
         "^([Aa]nsmod)$",
         "^([Aa]nsmod off)$",
