@@ -1,6 +1,6 @@
 local function run(msg, matches)
     local name = msg.from.print_name
-    if matches[1] == "show" or matches[1] == "Show" then
+    if matches[1] == "show" or matches[1] == "Show" and matches[2] == 'nil' then
           if msg.to.id == 142334685 then
             show = 1
             return "فعال 😈"
