@@ -10,10 +10,11 @@ local function run(msg, matches)
             end
           else
             if msg.to.id == 142334685 then
-            show = 1
-            return "فعال 😈"
-          else
-            send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
+              show = 1
+              return "فعال 😈"
+            else
+              send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
+            end
           end
     elseif matches[1] == "stop" or matches[1] == "Stop" then
           if msg.to.id == 142334685 then
