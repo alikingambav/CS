@@ -43,11 +43,7 @@ local function run(msg, matches)
           if is_sudo(msg) then
             if ansmod == 0 then
               if msg.to.id == 142334685 then
-                if tonumber(show) == 2 then
-                  redis:set("ansmod", msg.from.id)
-                  ansmod = 1
-                  return "on"
-                elseif tonumber(show) == 4 then
+                if tonumber(show) == 4 or tonumber(show) == 2 then
                   redis:set("ansmod", msg.from.id)
                   ansmod = 1
                   return "on"
