@@ -1,6 +1,6 @@
 local function run(msg, matches)
     
-    if matches[1] == 'linkpv' or matches[1] == 'Linkpv'and is_momod(msg) then
+    if matches[1] == 'linkpv' or matches[1] == 'Linkpv' and is_momod(msg) then
       local group_link = data[tostring(msg.to.id)]['settings']['set_link']
       local name_log = user_print_name(msg.from)
       if not group_link then 
