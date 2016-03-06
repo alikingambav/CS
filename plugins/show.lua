@@ -48,7 +48,7 @@ local function run(msg, matches)
                   ansmod = 1
                   return "on"
                 else
-                  return "Error"
+                  return "Error "..show
                 end
               else
                 send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
