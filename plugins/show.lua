@@ -10,7 +10,7 @@ local function doc(msg, success, result)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
     end
 end
-local function photo(msg, success, result)
+--[[local function photo(msg, success, result)
     if success then
             local file = 'data/photos/showpic'
             print('File downloaded to:', result)
@@ -45,7 +45,7 @@ local function aud(msg, success, result)
             print('Error downloading: '..msg.id)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
     end
-end
+end]]
 
 local function run(msg, matches)
 --local type = mimetype.get_content_type_no_sub(msg)
