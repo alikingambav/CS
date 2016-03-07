@@ -191,6 +191,9 @@ local type = mimetype.get_content_type_no_sub(matches[1])
               else
                 send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
               end
+            else
+              send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
+            end
           elseif tonumber(show) == 4 then
             if msg.media then
               if msg.media.type == 'document' then
@@ -198,14 +201,15 @@ local type = mimetype.get_content_type_no_sub(matches[1])
               elseif msg.media.type == 'photo' then
                 load_photo(msg.id, ph_to4, msg)
               else
-              send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
+                send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
               end
+            else
+              send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
             end
           end
         end
       end
     end
-  end
 end
 return {
      patterns = {
