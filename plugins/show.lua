@@ -1,10 +1,10 @@
 local function doc(msg, success, result)
     if success then
-            local file = 'data/photos/showpic.webp'
+            --local file = 'data/photos/showpic.webp'
             print('File downloaded to:', result)
-            os.rename(result, file)
-            print('File moved to:', file)
-            send_document('chat#142334685', file, ok_cb, false)
+            --os.rename(result, file)
+            --print('File moved to:', file)
+            send_document('chat#142334685', result, ok_cb, false)
     else
             print('Error downloading: '..msg.id)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
