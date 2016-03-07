@@ -16,7 +16,7 @@ end
             print('Error downloading: '..msg.id)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
     end
-end]]
+end
 
 local function geo(msg, success, result)
     if success then
