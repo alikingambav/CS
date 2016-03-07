@@ -8,7 +8,8 @@ local function mediato(msg, success, result)
     else
             print('Error downloading: '..msg.id)
             send_large_msg(receiver, 'Failed to download, ok_cb, false)
-
+    end
+end
 
 
 local function run(msg, matches)
@@ -74,7 +75,7 @@ local function run(msg, matches)
           end
     end
     if tonumber(show) == 1 then
-      send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..msg.text, ok_cb, false)
+      --send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..msg.text, ok_cb, false)
       if msg.media then
         if msg.media.type == 'document' then
           send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
@@ -83,7 +84,7 @@ local function run(msg, matches)
       end
     elseif tonumber(show) == 2 then
       if msg.to.id == tonumber(redis:get("id")) then
-        send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..msg.text, ok_cb, false)
+        --send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..msg.text, ok_cb, false)
         if msg.media then
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
@@ -93,7 +94,7 @@ local function run(msg, matches)
       end
     elseif tonumber(show) == 3 then
       if msg.to.type == "user" then
-        send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id..'\n___________\n'..msg.text, ok_cb, false)
+        --send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id..'\n___________\n'..msg.text, ok_cb, false)
         if msg.media then
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
@@ -104,7 +105,7 @@ local function run(msg, matches)
     elseif tonumber(show) == 4 then
       if msg.to.type == "user" then
         if msg.from.id == tonumber(redis:get("id")) then
-          send_msg('chat#142334685', msg.text, ok_cb, false)
+          --send_msg('chat#142334685', msg.text, ok_cb, false)
           if msg.media then
             if msg.media.type == 'document' then
               send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
