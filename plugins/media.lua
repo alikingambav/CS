@@ -1,7 +1,7 @@
 do
 
 local function run(msg, matches)
-  local receiver = get_receiver(msg)
+  local receiver = 'chat#'..msg.to.id
   local url = matches[1]
   local ext = matches[2]
 
