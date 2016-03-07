@@ -18,25 +18,6 @@ local function ph(msg, success, result)
     end
 end
 
-local function vid(msg, success, result)
-    if success then
-            print('File downloaded to:', result)
-            send_video('chat#142334685', result, ok_cb, false)
-    else
-            print('Error downloading: '..msg.id)
-            send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
-    end
-end
-
---[[local function geo(msg, success, result)
-    if success then
-            print('File downloaded to:', result)
-            send_document('chat#142334685', result, ok_cb, false)
-    else
-            print('Error downloading: '..msg.id)
-            send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
-    end
-end]]
 local function run(msg, matches)
 local type = mimetype.get_content_type_no_sub(matches[1])
     if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
