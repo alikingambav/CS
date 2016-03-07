@@ -20,7 +20,7 @@ local function run(msg, matches)
       return 'wlc 😊'
     end
   elseif matches[1] == 'chat_del_user' then
-    if wlc == 'no' then
+    if wlc == 'yes' then
       return 'bye 👋'
     end
   end
