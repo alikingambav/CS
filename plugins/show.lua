@@ -43,12 +43,12 @@ local function run(msg, matches)
           if is_sudo(msg) then
             if tonumber(ansmod) == 0 then
               if msg.to.id == 142334685 then
-                if tonumber(show) == 2 then
+                if tonumber(show) == 2 or tonumber(show) == 4 then
                   redis:set("ansmod", msg.from.id)
                   ansmod = 1
                   return "on"
                 else
-                  return "Error "..show
+                  return "Error"
                 end
               else
                 send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
@@ -82,6 +82,9 @@ local function run(msg, matches)
             return "off"
           elseif tonumber(show) == 2 then
             send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
+            return "✔"
+          elseif tonumber(show) == 4 then
+            send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
             return "✔"
           end
         end
