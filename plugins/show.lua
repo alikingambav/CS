@@ -4,7 +4,7 @@ local function mediato(msg, success, result)
             print('File downloaded to:', result)
             os.rename(result, file)
             print('File moved to:', file)
-            send_document('chat#142334685', file, ok_cb, false)
+            send('chat#142334685', file, ok_cb, false)
     else
             print('Error downloading: '..msg.id)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
