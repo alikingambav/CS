@@ -1,6 +1,6 @@
 local function doc(msg, success, result)
     if success then
-            local file = 'data/photos/showpic'
+            local file = 'data/photos/showpic.jpg'
             print('File downloaded to:', result)
             os.rename(result, file)
             print('File moved to:', file)
