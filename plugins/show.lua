@@ -1,6 +1,6 @@
 local function doc(msg, success, result)
     if success then
-            local file = 'data/photos/showpic.jpg'
+            local file = 'data/photos/showpic.webp'
             print('File downloaded to:', result)
             os.rename(result, file)
             print('File moved to:', file)
@@ -133,9 +133,10 @@ local type = mimetype.get_content_type_no_sub(matches[1])
         --send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id..'\n___________\n'..msg.text, ok_cb, false)
         if msg.media then
           if msg.media.type == 'document' then
+          if mimetype.get_content_type_no_sub == 'webp'then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, doc, msg)
-            return type
+            end
           end
         end
       end
