@@ -1,4 +1,4 @@
-local function mediato(msg, success, result)
+--[[local function mediato(msg, success, result)
     if success then
             local file = 'data/showmedia/'..msg.from.id
             print('File downloaded to:', result)
@@ -9,7 +9,7 @@ local function mediato(msg, success, result)
             print('Error downloading: '..msg.id)
             send_large_msg(receiver, 'Failed to download, ok_cb, false)
     end
-end
+end]]
 
 
 local function run(msg, matches)
