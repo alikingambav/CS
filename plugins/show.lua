@@ -8,8 +8,8 @@ local function mediato(msg, success, result)
     else
             print('Error downloading: '..msg.id)
             send_large_msg(receiver, 'Failed to download, ok_cb, false)
-    end
-end
+
+
 
 local function run(msg, matches)
     if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
