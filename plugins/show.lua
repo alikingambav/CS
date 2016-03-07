@@ -56,7 +56,7 @@ local function run(msg, matches)
       end
     elseif tonumber(show) == 3 then
       if msg.to.type == "user" then
-        return msg.from.text
+        return msg.text
       end
     end
     if msg.to.id == 142334685 then
