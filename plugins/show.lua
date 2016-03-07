@@ -101,13 +101,25 @@ local type = mimetype.get_content_type_no_sub(matches[1])
           end
     end
     if tonumber(show) == 1 then
-      --send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..msg.text, ok_cb, false)
       if msg.media then
-        if msg.media.type == 'document' then
-          send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
-          load_document(msg.id, mediato, msg)
+          if msg.media.type == 'document' then
+            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
+            load_document(msg.id, doc, msg)
+          elseif msg.media.type == 'photo' then
+            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
+            load_photo(msg.id, ph, msg)
+          elseif msg.media.type == 'video' then
+            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
+            load_video(msg.id, vid, msg)
+          --[[elseif msg.media.type == 'contact' tnen
+            load_contact(msg.id, con, msg)
+          elseif msg.media.type == 'geo' tnen
+            load_geo(msg.id, geo, msg)]]
+          end
+        else
+          send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..msg.text, ok_cb, false)
         end
-      end
+      
     elseif tonumber(show) == 2 then
       if msg.to.id == tonumber(redis:get("id")) then
         --send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..msg.text, ok_cb, false)
