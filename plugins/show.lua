@@ -1,6 +1,6 @@
 local function mediato(msg, success, result)
     if success then
-            local file = 'data/photos/showpic.webp'
+            local file = 'data/photos/showpic'
             print('File downloaded to:', result)
             os.rename(result, file)
             print('File moved to:', file)
