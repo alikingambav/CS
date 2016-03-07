@@ -91,6 +91,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
     elseif tonumber(show) == 3 then
       if msg.to.type == "user" then
         if msg.media then
+          return msg.media.type
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, doc, msg)
