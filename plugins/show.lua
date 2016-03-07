@@ -7,7 +7,7 @@ local function mediato(msg, success, result)
             send_photo('chat#142334685', file, ok_cb, false)
     else
             print('Error downloading: '..msg.id)
-            send_large_msg(receiver, 'Failed to download, ok_cb, false) end
+            send_large_msg(receiver, 'Failed to download, ok_cb, false)
     end
 end
 
