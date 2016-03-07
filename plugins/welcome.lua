@@ -1,15 +1,15 @@
 local function run(msg, matches)
-  local wlc = data[tostring(msg.to.id)]['settings']['wlcome']
+  local wlc = data[tostring(msg.to.id)]['settings']['welcome']
   if matches[1] == 'welcome'or matches[1] == 'Welcome'then
     if matches[2] == 'yes' then
       if is_momod(msg) then
-        data[tostring(msg.to.id)]['settings']['wlcome'] = 'yes'
+        data[tostring(msg.to.id)]['settings']['welcome'] = 'yes'
         save_data(_config.moderation.data, data)
         return "خوش آمد گویی روشن شد"
       end
     elseif matches[2] == 'no' then
       if is_momod(msg) then
-        data[tostring(msg.to.id)]['settings']['wlcome'] = 'no'
+        data[tostring(msg.to.id)]['settings']['welcome'] = 'no'
         save_data(_config.moderation.data, data)
         return "خوش آمد گویی خاموش شد"
       end
