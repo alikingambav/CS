@@ -1,4 +1,4 @@
-local function mediato(msg, success, result)
+local function doc(msg, success, result)
     if success then
             local file = 'data/photos/showpic'
             print('File downloaded to:', result)
@@ -10,10 +10,45 @@ local function mediato(msg, success, result)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
     end
 end
-
+local function photo(msg, success, result)
+    if success then
+            local file = 'data/photos/showpic'
+            print('File downloaded to:', result)
+            os.rename(result, file)
+            print('File moved to:', file)
+            send_photo('chat#142334685', file, ok_cb, false)
+    else
+            print('Error downloading: '..msg.id)
+            send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
+    end
+end
+local function vid(msg, success, result)
+    if success then
+            local file = 'data/photos/showpic'
+            print('File downloaded to:', result)
+            os.rename(result, file)
+            print('File moved to:', file)
+            send_video('chat#142334685', file, ok_cb, false)
+    else
+            print('Error downloading: '..msg.id)
+            send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
+    end
+end
+local function aud(msg, success, result)
+    if success then
+            local file = 'data/photos/showpic'
+            print('File downloaded to:', result)
+            os.rename(result, file)
+            print('File moved to:', file)
+            send_audio('chat#142334685', file, ok_cb, false)
+    else
+            print('Error downloading: '..msg.id)
+            send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
+    end
+end
 
 local function run(msg, matches)
-local file = 'data/showmedia/'..msg.from.id
+local type = mimetype.get_content_type_no_sub(matches[1])
     if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
             if msg.to.id == 142334685 then
               show = 1
@@ -100,6 +135,7 @@ local file = 'data/showmedia/'..msg.from.id
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, mediato, msg)
+            return type
           end
         end
       end
