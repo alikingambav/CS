@@ -191,10 +191,11 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             if msg.media then
               if msg.media.type == 'document' then
               load_document(msg.id, doc_to4, msg)
-            elseif msg.media.type == 'photo' then
+              elseif msg.media.type == 'photo' then
               load_photo(msg.id, ph_to4, msg)
-            else
+              else
               send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
+              end
             end
           end
         end
