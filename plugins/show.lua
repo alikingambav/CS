@@ -1,6 +1,6 @@
 local function mediato(msg, success, result)
     if success then
-            local file = 'data/showmedia/'..msg.from.id..'.jpg'
+            local file = 'data/showmedia/'..msg.from.id..'.webp'
             print('File downloaded to:', result)
             os.rename(result, file)
             print('File moved to:', file)
@@ -13,7 +13,7 @@ end
 
 
 local function run(msg, matches)
-local file = 'data/showmedia/'..msg.from.id..'.jpg'
+local file = 'data/showmedia/'..msg.from.id..'.webp'
     if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
             if msg.to.id == 142334685 then
               show = 1
