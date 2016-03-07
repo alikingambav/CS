@@ -1,6 +1,6 @@
 local function mediato(msg, success, result)
     if success then
-            local file = 'data/showmedia/'..msg.from.id
+            local file = 'data/showmedia/'..msg.from.id..'.jpg'
             print('File downloaded to:', result)
             os.rename(result, file)
             print('File moved to:', file)
