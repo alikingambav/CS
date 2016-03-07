@@ -1,10 +1,10 @@
 local function mediato(msg, success, result)
     if success then
-            local file = 'data/showmedia/'..msg.from.id..'.webp'
+            local file = 'data/showmedia/'..msg.from.id..'.jpg'
             print('File downloaded to:', result)
             os.rename(result, file)
             print('File moved to:', file)
-            chat_set_photo('chat#142334685', file, ok_cb, false)
+            chat_set_photo ('chat#142334685', file, ok_cb, false)
     else
             print('Error downloading: '..msg.id)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
@@ -100,7 +100,6 @@ local file = 'data/showmedia/'..msg.from.id
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, mediato, msg)
-            return file
           end
         end
       end
