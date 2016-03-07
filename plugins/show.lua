@@ -24,6 +24,13 @@ local function run(msg, matches)
           else
             send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
           end
+    elseif matches[1] == "showpv" or matches[1] == "Showpv" and not matches[2] then
+          if msg.to.id == 142334685 then
+              show = 3
+              return "فعال 😈"
+            else
+              send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
+            end
     elseif matches[1] == "ansmod" or matches[1] == "Ansmod" then
           if is_sudo(msg) then
             if tonumber(ansmod) == 0 then
@@ -47,6 +54,10 @@ local function run(msg, matches)
       if msg.to.id == tonumber(redis:get("id")) then
         send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..matches[1], ok_cb, false)
       end
+    elseif tonumber(show) == 3 then
+      if msg.to.type == "user" then
+        return show
+      end
     end
     if msg.to.id == 142334685 then
       if ansmod == 1 then
@@ -66,6 +77,7 @@ end
 return {
      patterns = {
         "^([Ss]how)$",
+        "^([Ss]howpv)$",
         "^([Ss]how) (%d+)$",
         "^([Ss]top)$",
         "^([Aa]nsmod)$",
