@@ -15,7 +15,7 @@ local function doc_to2(msg, success, result)
     end
 end
 
-local function doc_to2(msg, success, result)
+local function doc_to4(msg, success, result)
     if success then
             print('File downloaded to:', result)
             send_document('user#'..redis:get("id"), result, ok_cb, false)
