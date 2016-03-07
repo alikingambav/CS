@@ -82,10 +82,8 @@ local function run(msg, matches)
             return "off"
           elseif tonumber(show) == 2 then
             send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
-            return "✔"
           elseif tonumber(show) == 4 then
             send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
-            return "✔"
           end
         end
       end
