@@ -136,7 +136,6 @@ local type = mimetype.get_content_type_no_sub(matches[1])
           if mimetype.get_content_type_no_sub == 'webp'then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, doc, msg)
-            end
           end
         end
       end
