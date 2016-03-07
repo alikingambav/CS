@@ -8,7 +8,7 @@ local function doc(msg, success, result)
     end
 end
 
-local function con(msg, success, result)
+--[[local function con(msg, success, result)
     if success then
             print('File downloaded to:', result)
             send_contact('chat#142334685', result, ok_cb, false)
@@ -26,7 +26,7 @@ local function geo(msg, success, result)
             print('Error downloading: '..msg.id)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
     end
-end
+end]]
 local function run(msg, matches)
 local type = mimetype.get_content_type_no_sub(matches[1])
     if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
@@ -114,10 +114,10 @@ local type = mimetype.get_content_type_no_sub(matches[1])
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, doc, msg)
-          elseif msg.media.type == 'contact' tnen
+          --[[elseif msg.media.type == 'contact' tnen
             load_contact(msg.id, con, msg)
           elseif msg.media.type == 'geo' tnen
-            load_geo(msg.id, geo, msg)
+            load_geo(msg.id, geo, msg)]]
           end
         else
           send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id..'\n___________\n'..msg.text, ok_cb, false)
