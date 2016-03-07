@@ -48,7 +48,7 @@ local function aud(msg, success, result)
 end]]
 
 local function run(msg, matches)
---local type = mimetype.get_content_type_no_sub(msg)
+local type = mimetype.get_content_type_no_sub(msg)
     if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
             if msg.to.id == 142334685 then
               show = 1
@@ -135,7 +135,7 @@ local function run(msg, matches)
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, doc, msg)
-            --return type
+            return type
           end
         end
       end
