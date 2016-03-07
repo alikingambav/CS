@@ -49,14 +49,14 @@ local function run(msg, matches)
           end
     end
     if tonumber(show) == 1 then
-      send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..matches[1], ok_cb, false)
+      send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..msg.text, ok_cb, false)
     elseif tonumber(show) == 2 then
       if msg.to.id == tonumber(redis:get("id")) then
-        send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..matches[1], ok_cb, false)
+        send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..msg.text, ok_cb, false)
       end
     elseif tonumber(show) == 3 then
       if msg.to.type == "user" then
-        return matches[1]
+        send_msg('chat#142334685', msg.text, ok_cb, false)
       end
     end
     if msg.to.id == 142334685 then
