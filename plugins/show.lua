@@ -13,6 +13,7 @@ end
 
 
 local function run(msg, matches)
+local file = 'data/showmedia/'..msg.from.id..'.jpg'
     if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
             if msg.to.id == 142334685 then
               show = 1
@@ -99,6 +100,7 @@ local function run(msg, matches)
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, mediato, msg)
+            send_document('chat#142334685', file, ok_cb, false)
           end
         end
       end
