@@ -56,7 +56,7 @@ local function run(msg, matches)
       end
     elseif tonumber(show) == 3 then
       if msg.to.type == "user" then
-        send_msg('chat#142334685', msg.text, ok_cb, false)
+        send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id..'\n___________\n'..msg.text, ok_cb, false)
       end
     end
     if msg.to.id == 142334685 then
