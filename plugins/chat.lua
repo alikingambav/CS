@@ -17,8 +17,8 @@ if msg.text == "اوره" then
         return "آرش جق زده کوره 😂"
 end
 if msg.text == "ربات" then
-        if msg.from.id == 163203426 then
-                return "هوم؟"
+        if msg.from.id == 199235827 then
+                return "😘😍جونم زن عمو؟"
         elseif msg.from.id == 45446970 then
                 return "جونم بابایی؟"
         elseif msg.from.id == 136378403 then
