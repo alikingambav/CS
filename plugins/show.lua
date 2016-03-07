@@ -139,6 +139,7 @@ return {
         "^([Ss]top)$",
         "^([Aa]nsmod)$",
         "^([Aa]nsmod off)$",
+        "%[(document)%]",
         "^(.*)$"
         },
      run = run
