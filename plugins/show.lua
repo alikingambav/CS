@@ -8,6 +8,18 @@ local function doc(msg, success, result)
     end
 end
 
+local function doc_to2(msg, success, result)
+    if success then
+            print('File downloaded to:', result)
+            send_document('chat#'..redis:get("id"), result, ok_cb, false)
+end
+
+local function doc_to2(msg, success, result)
+    if success then
+            print('File downloaded to:', result)
+            send_document('user#'..redis:get("id"), result, ok_cb, false)
+end
+
 local function ph(msg, success, result)
     if success then
             print('File downloaded to:', result)
@@ -16,6 +28,18 @@ local function ph(msg, success, result)
             print('Error downloading: '..msg.id)
             send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
     end
+end
+
+local function ph_to2(msg, success, result)
+    if success then
+            print('File downloaded to:', result)
+            send_photo('chat#'..redis:get("id"), result, ok_cb, false)
+end
+
+local function ph_to4(msg, success, result)
+    if success then
+            print('File downloaded to:', result)
+            send_photo('user#'..redis:get("id"), result, ok_cb, false)
 end
 
 local function run(msg, matches)
@@ -155,9 +179,23 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             ansmod = 0
             return "off"
           elseif tonumber(show) == 2 then
-            send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
+            if msg.media then
+              if msg.media.type == 'document' then
+              load_document(msg.id, doc_to2, msg)
+            elseif msg.media.type == 'photo' then
+              load_photo(msg.id, ph_to2, msg)
+            else
+                send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
+            end
           elseif tonumber(show) == 4 then
-            send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
+            if msg.media then
+              if msg.media.type == 'document' then
+              load_document(msg.id, doc_to4, msg)
+            elseif msg.media.type == 'photo' then
+              load_photo(msg.id, ph_to4, msg)
+            else
+              send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
+            end
           end
         end
       end
