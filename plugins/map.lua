@@ -3,7 +3,7 @@ do
 function run(msg, matches)
   local lat = matches[1]
   local lon = matches[2]
-  zoom = 18
+  zoom = '18'
   local receiver = get_receiver(msg)
   if matches[3] then
   local zoom = matches[3]
