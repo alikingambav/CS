@@ -14,7 +14,7 @@ send_msg(SendTo,DeviceName..' battery level was '..BattLevel..' when last seen '
  end
 local function run(msg)
   if msg.text == 'Test' then
-     return Battery(SendTo, command, DeviceName)
+     return DomoticzIP
   end
 end
 
