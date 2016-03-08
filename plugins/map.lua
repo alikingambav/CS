@@ -13,7 +13,7 @@ function run(msg, matches)
     table.insert(urls, url)
   end
   send_locations_from_url(receiver, urls)
-  send_photos_from_url(receiver, urls)
+  --send_photos_from_url(receiver, urls)
 
   return "www.google.es/maps/place/@" .. lat .. "," .. lon
 end
