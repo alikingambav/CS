@@ -9,8 +9,8 @@ function run(msg, matches)
   local urls = {}
   for i = 1, #zooms do
     local zoom = zooms[i]
-    local url = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=600x300&maptype=roadmap&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
-    table.insert(urls, url)
+    local url1 = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=600x300&maptype=roadmap&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
+    table.insert(urls, url1)
   end
   send_photos_from_url(receiver, urls)
   --return "www.google.es/maps/place/@" .. lat .. "," .. lon
