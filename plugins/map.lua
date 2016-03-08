@@ -12,7 +12,7 @@ function run(msg, matches)
     local url = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=600x300&maptype=roadmap&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
     table.insert(urls, url)
   end
-  send_location_from_url(receiver, urls)
+  send_location(receiver, urls)
   --send_photos_from_url(receiver, urls)
 
   return "www.google.es/maps/place/@" .. lat .. "," .. lon
