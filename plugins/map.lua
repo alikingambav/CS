@@ -9,7 +9,7 @@
 -- If you have a google api key for the geocoding/timezone api
 do
 
-local api_key = nil
+local api_key = 'ba988fed8342'
 
 local base_api = "https://maps.googleapis.com/maps/api"
 
