@@ -5,7 +5,7 @@ function run(msg, matches)
   local lon = matches[2]
   local receiver = get_receiver(msg)
 
-  local zooms = {16, 18}
+  local zooms = matches[3]
   local urls = {}
   for i = 1, #zooms do
     local zoom = zooms[i]
@@ -21,7 +21,7 @@ end
 return {
   description = "generates a map showing the given GPS coordinates", 
   usage = "!gps latitude,longitude: generates a map showing the given GPS coordinates",
-  patterns = {"^[Gg]ps ([^,]*)[,%s]([^,]*)$"}, 
+  patterns = {"^[Gg]ps ([^,]*)[,%s]([^,]*) (%d+)$"}, 
   run = run 
 }
 
