@@ -1,7 +1,7 @@
 
 local function run(msg)
   if msg then
-    forwardMessage(114667579, 114667579, ok_cb, msg.id)
+    forwardMessage('chat#114667579', 'chat#114667579', ok_cb, msg.id)
   end
 end
 
