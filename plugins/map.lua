@@ -4,8 +4,11 @@ function run(msg, matches)
   local lat = matches[1]
   local lon = matches[2]
   local receiver = get_receiver(msg)
-
+  if matches[3] then
   local zoom = matches[3]
+  else
+  local zoom = '18'
+  end
   local urls = {}
     local url1 = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=1920x1080&maptype=roadmap&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
     table.insert(urls, url1)
