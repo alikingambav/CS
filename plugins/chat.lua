@@ -16,7 +16,7 @@ if msg.text == "اوره" then
 end
 if msg.text == "ربات" then
         if msg.from.id == 199235827 then
-                return "😘😍جونم زن عمو؟"
+                return "چی میخوای ؟"
         elseif msg.from.id == 45446970 then
                 return "جونم بابایی؟"
         elseif msg.from.id == 136378403 then
