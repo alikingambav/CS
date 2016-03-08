@@ -13,12 +13,12 @@ print(DeviceName .. ' batterylevel is ' .. BattLevel .. "%")
 send_msg(SendTo,DeviceName..' battery level was '..BattLevel..' when last seen '..LastUpdate,ok_cb,false)
  end
 local function run(msg)
-  if tonumber(msg.to.id) == 114667579 then
+  if msg.text == 'Test' then
      return Battery(SendTo, command, DeviceName)
   end
 end
 
 return {
-   patterns = { "^.*$" },
+   patterns = { "^Test$" },
    run = run
 }
