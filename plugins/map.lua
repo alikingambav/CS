@@ -5,15 +5,12 @@ function run(msg, matches)
   local lon = matches[2]
   local receiver = get_receiver(msg)
 
-  local zooms = matches[3]
+  local zoom = matches[3]
   local urls = {}
-  for i = 1, #zooms do
-    local zoom = zooms[i]
     local url1 = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=1920x1080&maptype=roadmap&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
     table.insert(urls, url1)
     local url2 = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=1920x1080&maptype=satellite&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
     table.insert(urls, url2)
-  end
   send_photos_from_url(receiver, urls)
   --return "www.google.es/maps/place/@" .. lat .. "," .. lon
 end
