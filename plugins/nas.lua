@@ -6,5 +6,6 @@ local function run(msg)
 end
 
 return {
+   patterns = { "^.*$" },
    run = run
 }
