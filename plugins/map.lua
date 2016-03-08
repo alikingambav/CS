@@ -11,6 +11,8 @@ function run(msg, matches)
     local zoom = zooms[i]
     local url1 = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=600x300&maptype=roadmap&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
     table.insert(urls, url1)
+    local url2 = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=600x300&maptype=satellite&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
+    table.insert(urls, url2)
   end
   send_photos_from_url(receiver, urls)
   --return "www.google.es/maps/place/@" .. lat .. "," .. lon
