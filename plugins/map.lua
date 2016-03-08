@@ -1,62 +1,28 @@
--- Implement a command !loc [area] which uses
--- the static map API to get a location image
-
--- Not sure if this is the proper way
--- Intent: get_latlong is in time.lua, we need it here
--- loadfile "time.lua"
-
--- Globals
--- If you have a google api key for the geocoding/timezone api
 do
 
-local api_key = 'ba988fed8342'
-
-local base_api = "https://maps.googleapis.com/maps/api"
-
-function get_staticmap(area)
-  local api        = base_api .. "/staticmap?"
-
-  -- Get a sense of scale
-  local lat,lng,acc,types = get_latlong(area)
-
-  local scale = types[1]
-  if     scale=="locality" then zoom=8
-  elseif scale=="country"  then zoom=4
-  else zoom = 13 end
-    
-  local parameters =
-    "size=600x300" ..
-    "&zoom="  .. zoom ..
-    "&center=" .. URL.escape(area) ..
-    "&markers=color:red"..URL.escape("|"..area)
-
-  if api_key ~=nil and api_key ~= "" then
-    parameters = parameters .. "&key="..api_key
-  end
-  return lat, lng, api..parameters
-end
-
-
 function run(msg, matches)
-  local receiver	= get_receiver(msg)
-  local lat,lng,url	= get_staticmap(matches[1])
+  local lat = matches[1]
+  local lon = matches[2]
+  local receiver = get_receiver(msg)
 
-  -- Send the actual location, is a google maps link
-  send_location(receiver, lat, lng, ok_cb, false)
+  local zooms = {16, 18}
+  local urls = {}
+  for i = 1, #zooms do
+    local zoom = zooms[i]
+    local url = "http://maps.googleapis.com/maps/api/staticmap?zoom=" .. zoom .. "&size=600x300&maptype=roadmap&center=" .. lat .. "," .. lon .. "&markers=color:blue%7Clabel:X%7C" .. lat .. "," .. lon
+    table.insert(urls, url)
+  end
 
-  -- Send a picture of the map, which takes scale into account
-  send_photo_from_url(receiver, url)
+  send_photos_from_url(receiver, urls)
 
-  -- Return a link to the google maps stuff is now not needed anymore
-  return nil
+  return "www.google.es/maps/place/@" .. lat .. "," .. lon
 end
 
 return {
-  description = "Get Man Location by Name", 
-  usage = "/map (name) : get map and location",
-  patterns = {"^[Mm]ap (.*)$"}, 
+  description = "generates a map showing the given GPS coordinates", 
+  usage = "!gps latitude,longitude: generates a map showing the given GPS coordinates",
+  patterns = {"^[Gg]ps ([^,]*)[,%s]([^,]*)$"}, 
   run = run 
 }
 
 end
---Shared by @BlackHatchannel 
