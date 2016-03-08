@@ -27,9 +27,9 @@ function get_staticmap(area)
   local parameters =
     "size=600x300" ..
     "&zoom="  .. zoom ..
-    "&center=" .. URL.escape(area) ..
-    "&markers=color:red"..URL.escape("|"..area)
-
+    "&center=" .. url.escape(area) ..
+    "&markers=color:red"..url.escape("|"..area)
+    local url = api..parameters
   if api_key ~=nil and api_key ~= "" then
     parameters = parameters .. "&key="..api_key
   end
