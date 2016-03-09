@@ -43,7 +43,6 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
       end
 end
 end
-end
 
 return {
      patterns = {
