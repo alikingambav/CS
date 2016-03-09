@@ -29,7 +29,8 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
          return 'link unlocked'
         end
       end
-      if locklink == 'yes' then
+end
+if locklink == 'yes' then
        if msg.to.type ~= 'chat' then
           return "Not a chat group!"
           elseif user == tostring(our_id) then
@@ -41,7 +42,6 @@ if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
          return "لینک ممنوعه 🚫"
        end
       end
-end
 end
 
 return {
