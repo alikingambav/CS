@@ -3,10 +3,12 @@ local x = 45446970
 local y = 136378403
 
 if msg.text == "ARJ" then
-	return "بابام دیگه نمیاد ، اون مرده 😭"
+	return "با باباییم چکار داری ؟ الان میارمش"
+        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
 end
 if msg.text == "A.R.J" then
-	return "بابام دیگه نمیاد ، اون مرده 😭"
+	return "با باباییم چکار داری ؟ الان میارمش"
+        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
 end
 if msg.text == "hi" then
 	return "سلام...  اگه میشه فارسی تایپ کن"
