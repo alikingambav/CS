@@ -65,7 +65,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-    elseif matches[1] == 'Showhere'then
+    elseif matches[1] == 'Showhere' then
     show = 5
     elseif matches[1] == "stop" or matches[1] == "Stop" then
           if msg.to.id == 142334685 then
@@ -94,8 +94,6 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-    elseif matches[1] == "Showhere" then
-    show = 5
     elseif matches [1] == "Stophere" then
     show = 0
     elseif matches[1] == "ansmod" or matches[1] == "Ansmod" then
