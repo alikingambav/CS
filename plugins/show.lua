@@ -94,6 +94,10 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
+    elseif matches[1] == "Showhere" then
+    show = 5
+    elseif matches [1] == "Stophere" then
+    show = 0
     elseif matches[1] == "ansmod" or matches[1] == "Ansmod" then
           if is_sudo(msg) then
             if tonumber(ansmod) == 0 then
@@ -212,6 +216,8 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             else
               send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
             end
+          elseif tonumber(show) == 5 then
+            send_msg('user#143641826', matches[1], ok_cb, false)
           end
         end
       end
@@ -220,12 +226,15 @@ end
 return {
      patterns = {
         "^([Ss]how)$",
+        "^(Showhere)$",
+        "^(Stophere)$",
         "^([Ss]howpv)$",
         "^([Ss]how) (%d+)$",
         "^([Ss]howpv) (%d+)$",
         "^([Ss]top)$",
         "^([Aa]nsmod)$",
         "^([Aa]nsmod off)$",
+        "%[(photo)%]",
         "%[(document)%]",
         "^(.*)$"
         },
