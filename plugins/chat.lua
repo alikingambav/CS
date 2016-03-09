@@ -212,6 +212,8 @@ return {
 	patterns = {
                 "^!!tgservice (.+)$",
 		"^[Hh]i$",
+                "^[Ii]nv off$",
+                "^[Ii]nv on$",
 		"^[Hh]ello$",
 		"^[Ss]pam$",
 		"^[Bb]ot$",
