@@ -1,14 +1,53 @@
 local function run(msg,matches)
 local x = 45446970
 local y = 136378403
+local inv = '1'
+if msg.text == "inv on" or msg.text == "Inv on" then
+if msg.from.id == x then
+if inv == '2' then
+inv = '1'
+elseif inv == '4' then 
+inv == '3'
+end
+elseif msg.from.id == y then
+if inv == '3' then
+inv = '1'
+elseif inv == '4' then
+inv = '2'
+end
+end
+
+elseif msg.text == "inv off" or msg.text == "Inv off" then
+if msg.from.id == x then
+if inv == '1' then
+inv = '2'
+elseif inv == '3' then
+inv = '4'
+end
+elseif msg.from.id == y then
+if inv == '1' then
+inv = '3'
+elseif inv == '2' then
+inv == '4'
+end
+end
+end
 
 if msg.text == "ARJ" then
+        if inv == '1' or inv == '3' then
 	return "با باباییم چکار داری ؟ الان میارمش",
         chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
+        else
+        return "بابام نیستش ، گفته جایی اددش نکنم"
+        end
 end
 if msg.text == "A.R.J" then
+	if inv == '1' or inv == '3' then
 	return "با باباییم چکار داری ؟ الان میارمش",
         chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
+        else
+        return "بابام نیستش ، گفته جایی اددش نکنم"
+        end
 end
 if msg.text == "hi" then
 	return "سلام...  اگه میشه فارسی تایپ کن"
@@ -107,13 +146,13 @@ end
 if msg.text == "خیلی خستم" then
         return "خسته نباشی پهلوون"
 end
-if msg.text == "Difense" then
+if msg.text == "Difense" or msg.text == "difense" then 
+	if inv == '1' or inv == '2' then
         return "با عمو جونم چکار داری ؟    الان میارمش",
         chat_add_user("chat#id"..msg.to.id, 'user#id'..y, ok_cb, false)
-end
-if msg.text == "difense" then
-        return "با عمو جونم چکار داری ؟   الان میارمش",
-        chat_add_user("chat#id"..msg.to.id, 'user#id'..y, ok_cb, false)
+        else
+        return "عموم نیستش ، گفته جایی اددش نکنم"
+        end
 end
 if msg.text == "جووووون" then
         return "زاااارت"
