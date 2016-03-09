@@ -29,8 +29,8 @@ local locklink = data[tostring(msg.to.id)]['settings']['lock_link']
          return 'link unlocked'
         end
         end
-        end
-    if locklink == 'yes' then
+        else
+          if locklink == 'yes' then
           if user == tostring(our_id) then
          --[[ A robot must protect its own existence as long as such protection does
          not conflict with the First or Second Laws. ]]--
@@ -40,6 +40,7 @@ local locklink = data[tostring(msg.to.id)]['settings']['lock_link']
          return "لینک ممنوعه 🚫"
        end
       end
+        end
 end
 
 return {
