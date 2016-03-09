@@ -7,7 +7,7 @@ if msg.from.id == x then
 if inv == '2' then
 inv = '1'
 elseif inv == '4' then 
-inv == '3'
+inv = '3'
 end
 elseif msg.from.id == y then
 if inv == '3' then
@@ -16,8 +16,8 @@ elseif inv == '4' then
 inv = '2'
 end
 end
-
-elseif msg.text == "inv off" or msg.text == "Inv off" then
+end
+if msg.text == "inv off" or msg.text == "Inv off" then
 if msg.from.id == x then
 if inv == '1' then
 inv = '2'
@@ -28,7 +28,7 @@ elseif msg.from.id == y then
 if inv == '1' then
 inv = '3'
 elseif inv == '2' then
-inv == '4'
+inv = '4'
 end
 end
 end
