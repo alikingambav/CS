@@ -9,31 +9,29 @@ local function run(msg, matches)
 local user = msg.from.id
  local chat = msg.to.id
 local locklink = data[tostring(msg.to.id)]['settings']['lock_link']
-if not is_momod(msg) or not is_sudo(msg) or not is_admin(msg) then
-	return "Mods Only!"
-	else
         if matches[1] == 'lock' or matches[1] == 'Lock' then
         if matches[2] == 'link' then
+      if is_momod(msg) then
         if locklink ~= 'yes' then
           data[tostring(msg.to.id)]['settings']['lock_link'] = 'yes'
           save_data(_config.moderation.data, data)
          end
         return 'link locked'
         end
+       end
       elseif matches[1] == 'Unlock' or matches[1] == 'unlock' then
            if matches[2] == 'link' then
           if locklink ~= 'no' then
+        if is_momod(msg) then
           data[tostring(msg.to.id)]['settings']['lock_link'] = 'no'
           save_data(_config.moderation.data, data)
          end
          return 'link unlocked'
         end
-      end
-end
-if locklink == 'yes' then
-       if msg.to.type ~= 'chat' then
-          return "Not a chat group!"
-          elseif user == tostring(our_id) then
+        end
+        end
+    if locklink == 'yes' then
+          if user == tostring(our_id) then
          --[[ A robot must protect its own existence as long as such protection does
          not conflict with the First or Second Laws. ]]--
          return ""
