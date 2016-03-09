@@ -503,7 +503,7 @@ local file = 'data/photos/chat_photo_'..msg.to.id..'.jpg'
 print('File downloaded to:', result)
 os.rename(result, file)
 print('File moved to:', file)
-chat_set_photo (receiver, file, ok_cb, false)
+chat_set_photo(receiver, file, ok_cb, false)
 data[tostring(msg.to.id)]['settings']['set_photo'] = file
 save_data(_config.moderation.data, data)
 data[tostring(msg.to.id)]['settings']['lock_photo'] = 'yes'
