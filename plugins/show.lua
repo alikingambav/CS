@@ -114,75 +114,21 @@ local type = mimetype.get_content_type_no_sub(matches[1])
           end
     end
     if tonumber(show) == 1 then
-      --[[if msg.media then
-          if msg.media.type == 'document' then
-            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."\n👇👇👇👇👇", ok_cb, false)
-            load_document(msg.id, doc, msg)
-          elseif msg.media.type == 'photo' then
-            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."\n👇👇👇👇👇", ok_cb, false)
-            load_photo(msg.id, ph, msg)
-          else
-            send_msg('chat#142334685', msg.to.print_name..'\n'..msg.to.id..'\n👇👇👇👇', ok_cb, false)
-            fwd_msg('chat#142334685')
-          end
-        else]]
-          send_msg('chat#142334685', msg.to.print_name..'\n'..msg.to.id..'\n👇👇👇👇', ok_cb, false)
-          fwd_msg('chat#142334685' , msg.id ,ok_cb, false)
-        --end
-      
+      send_msg('chat#142334685', msg.to.print_name..'\n'..msg.to.id..'\n👇👇👇👇', ok_cb, false)
+      fwd_msg('chat#142334685' , msg.id ,ok_cb, false)
     elseif tonumber(show) == 2 then
       if msg.to.id == tonumber(redis:get("id")) then
-        if msg.media then
-          if msg.media.type == 'document' then
-            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."\n👇👇👇👇👇", ok_cb, false)
-            load_document(msg.id, doc, msg)
-          elseif msg.media.type == 'photo' then
-            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."\n👇👇👇👇👇", ok_cb, false)
-            load_photo(msg.id, ph, msg)
-          else
-            send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..msg.text, ok_cb, false)
-          end
-        else
-          send_msg('chat#142334685', msg.from.print_name.. '\n___________\n'..msg.text, ok_cb, false)
-        end
+        fwd_msg('chat#142334685', msg.id, ok_cb, false)
       end
     elseif tonumber(show) == 3 then
       if msg.to.type == "user" then
-        if msg.media then
-          if msg.media.type == 'document' then
-            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id.."\n👇👇👇👇👇", ok_cb, false)
-            load_document(msg.id, doc, msg)
-          elseif msg.media.type == 'photo' then
-            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id.."\n👇👇👇👇👇", ok_cb, false)
-            load_photo(msg.id, ph, msg)
-          else
-            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id..'\n___________\n'..msg.text, ok_cb, false)
-          end
-        else
-          send_msg('chat#142334685', msg.from.print_name..'\n'..msg.from.id..'\n___________\n'..msg.text, ok_cb, false)
-        end
+        fwd_msg('chat#142334685', msg.id, ok_cb, false)
       end
     elseif tonumber(show) == 4 then
       if msg.to.type == "user" then
         if msg.from.id == tonumber(redis:get("id")) then
-          if msg.media then
-            if msg.media.type == 'document' then
-              send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
-              load_document(msg.id, doc, msg)
-            elseif msg.media.type == 'photo' then
-              send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
-              load_photo(msg.id, ph, msg)
-            else
-              send_msg('chat#142334685', msg.text, ok_cb, false)
-            end
-          else
-            send_msg('chat#142334685', msg.text, ok_cb, false)
-          end
+            fwd_msg('chat#142334685', msg.id, ok_cb, false)
         end
-      end
-    elseif tonumber(show) == 5 then
-      if msg.to.type == "user" then
-        send_msg('chat#114667579', msg.text, ok_cb, false)
       end
     end
     if msg.to.id == 142334685 then
