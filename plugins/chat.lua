@@ -1,54 +1,7 @@
 local function run(msg,matches)
 local x = 45446970
 local y = 136378403
-local inv = '1'
-if msg.text == "inv on" or msg.text == "Inv on" then
-if msg.from.id == x then
-if inv == '2' then
-inv = '1'
-elseif inv == '4' then 
-inv = '3'
-end
-elseif msg.from.id == y then
-if inv == '3' then
-inv = '1'
-elseif inv == '4' then
-inv = '2'
-end
-end
-end
-if msg.text == "inv off" or msg.text == "Inv off" then
-if msg.from.id == x then
-if inv == '1' then
-inv = '2'
-elseif inv == '3' then
-inv = '4'
-end
-elseif msg.from.id == y then
-if inv == '1' then
-inv = '3'
-elseif inv == '2' then
-inv = '4'
-end
-end
-end
 
-if msg.text == "ARJ" then
-        if inv == '1' or inv == '3' then
-	return "با باباییم چکار داری ؟ الان میارمش",
-        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
-        else
-        return "بابام نیستش ، گفته جایی اددش نکنم"
-        end
-end
-if msg.text == "A.R.J" then
-	if inv == '1' or inv == '3' then
-	return "با باباییم چکار داری ؟ الان میارمش",
-        chat_add_user("chat#id"..msg.to.id, 'user#id'..x, ok_cb, false)
-        else
-        return "بابام نیستش ، گفته جایی اددش نکنم"
-        end
-end
 if msg.text == "hi" then
 	return "سلام...  اگه میشه فارسی تایپ کن"
 end
@@ -58,8 +11,6 @@ end
 if msg.text == "ربات" then
         if msg.from.id == 199235827 then
                 return "چی میخوای ؟"
-        elseif msg.from.id == 45446970 then
-                return "جونم بابایی؟"
         elseif msg.from.id == 136378403 then
                 return "جونم عمو😍"
         elseif msg.from.id == 178392470 then
@@ -212,8 +163,6 @@ return {
 	patterns = {
                 "^!!tgservice (.+)$",
 		"^[Hh]i$",
-                "^[Ii]nv off$",
-                "^[Ii]nv on$",
 		"^[Hh]ello$",
 		"^[Ss]pam$",
 		"^[Bb]ot$",
@@ -224,8 +173,6 @@ return {
                 "^[Gg]oh nakhor$",
                 "^sik :D$",
                 "^[Bb]ashe$",
-                "^ARJ$",
-                "^A.R.J$",
                 "^[Dd]ifense$",
                 "^فدات بابات$",
                 "^گه نخور$",
