@@ -114,7 +114,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
           end
     end
     if tonumber(show) == 1 then
-      if msg.media then
+      --[[if msg.media then
           if msg.media.type == 'document' then
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."\n👇👇👇👇👇", ok_cb, false)
             load_document(msg.id, doc, msg)
@@ -122,11 +122,13 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."\n👇👇👇👇👇", ok_cb, false)
             load_photo(msg.id, ph, msg)
           else
+            send_msg('chat#142334685', msg.to.print_name..'\n'..msg.to.id..'\n👇👇👇👇', ok_cb, false)
             fwd_msg('chat#142334685')
           end
-        else
+        else]]
+          send_msg('chat#142334685', msg.to.print_name..'\n'..msg.to.id..'\n👇👇👇👇', ok_cb, false)
           fwd_msg('chat#142334685' , msg.id ,ok_cb, false)
-        end
+        --end
       
     elseif tonumber(show) == 2 then
       if msg.to.id == tonumber(redis:get("id")) then
