@@ -67,7 +67,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
       end
     end
     if msg.to.id == 142334685 then
-      if is_sudo(msg)then 
+      if is_sudo(msg) then 
         if type(msg.reply_id) ~= 'nil' then
           ----
           if type(msg.fwd_id) ~= 'nil'then
