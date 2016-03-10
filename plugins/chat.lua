@@ -98,12 +98,8 @@ if msg.text == "خیلی خستم" then
         return "خسته نباشی پهلوون"
 end
 if msg.text == "Difense" or msg.text == "difense" then 
-	if inv == '1' or inv == '2' then
         return "با عمو جونم چکار داری ؟    الان میارمش",
         chat_add_user("chat#id"..msg.to.id, 'user#id'..y, ok_cb, false)
-        else
-        return "عموم نیستش ، گفته جایی اددش نکنم"
-        end
 end
 if msg.text == "جووووون" then
         return "زاااارت"
