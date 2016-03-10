@@ -1,50 +1,3 @@
-local function doc(msg, success, result)
-    if success then
-            print('File downloaded to:', result)
-            send_document('chat#142334685', result, ok_cb, false)
-    else
-            print('Error downloading: '..msg.id)
-            send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
-    end
-end
-
-local function doc_to2(msg, success, result)
-    if success then
-            print('File downloaded to:', result)
-            send_document('chat#'..redis:get("id"), result, ok_cb, false)
-    end
-end
-
-local function doc_to4(msg, success, result)
-    if success then
-            print('File downloaded to:', result)
-            send_document('user#'..redis:get("id"), result, ok_cb, false)
-    end
-end
-
-local function ph(msg, success, result)
-    if success then
-            print('File downloaded to:', result)
-            send_photo('chat#142334685', result, ok_cb, false)
-    else
-            print('Error downloading: '..msg.id)
-            send_large_msg('chat#142334685', 'Failed to download', ok_cb, false)
-    end
-end
-
-local function ph_to2(msg, success, result)
-    if success then
-            print('File downloaded to:', result)
-            send_photo('chat#'..redis:get("id"), result, ok_cb, false)
-    end
-end
-
-local function ph_to4(msg, success, result)
-    if success then
-            print('File downloaded to:', result)
-            send_photo('user#'..redis:get("id"), result, ok_cb, false)
-    end
-end
 
 local function run(msg, matches)
 local type = mimetype.get_content_type_no_sub(matches[1])
@@ -94,24 +47,6 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-    elseif matches [1] == "Stophere" then
-    show = 0
-    elseif matches[1] == "ansmod" or matches[1] == "Ansmod" then
-          if is_sudo(msg) then
-            if tonumber(ansmod) == 0 then
-              if msg.to.id == 142334685 then
-                if tonumber(show) == 2 or tonumber(show) == 4 then
-                  redis:set("ansmod", msg.from.id)
-                  ansmod = 1
-                  return "on"
-                else
-                  return "Error"
-                end
-              else
-                send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
-              end
-            end
-          end
     end
     if tonumber(show) == 1 then
       send_msg('chat#142334685', msg.to.print_name..'\n'..msg.to.id..'\n👇👇👇👇', ok_cb, false)
@@ -132,39 +67,15 @@ local type = mimetype.get_content_type_no_sub(matches[1])
       end
     end
     if msg.to.id == 142334685 then
-      if ansmod == 1 then
-        if msg.from.id == tonumber(redis:get("ansmod")) then
-          if matches[1] == "ansmod off" or matches[1] == "Ansmod off" then
-            redis:del("ansmod")
-            ansmod = 0
-            return "off"
-          elseif tonumber(show) == 2 then
-            if msg.media then
-              if msg.media.type == 'document' then
-                load_document(msg.id, doc_to2, msg)
-              elseif msg.media.type == 'photo' then
-                load_photo(msg.id, ph_to2, msg)
-              else
-                send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
-              end
-            else
-              send_msg('chat#'..redis:get("id"), matches[1], ok_cb, false)
+      if is_sudo(msg)then 
+        if type(msg.reply_id) ~= 'nil' then
+          ----
+          if type(msg.fwd_id) ~= 'nil'then
+            if show == 3 or show == 4 then
+              send_msg('user#'..msg.fwd_id, msg.text, ok_cb, false)
             end
-          elseif tonumber(show) == 4 then
-            if msg.media then
-              if msg.media.type == 'document' then
-                load_document(msg.id, doc_to4, msg)
-              elseif msg.media.type == 'photo' then
-                load_photo(msg.id, ph_to4, msg)
-              else
-                send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
-              end
-            else
-              send_msg('user#'..redis:get("id"), matches[1], ok_cb, false)
-            end
-          elseif tonumber(show) == 5 then
-            send_msg('user#143641826', matches[1], ok_cb, false)
           end
+          ----
         end
       end
     end
