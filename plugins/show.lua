@@ -125,7 +125,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             fwd_msg('chat#142334685')
           end
         else
-          fwd_msg('chat#142334685' ,msg)
+          fwd_msg('chat#142334685' ,msg.id)
         end
       
     elseif tonumber(show) == 2 then
