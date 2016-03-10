@@ -66,13 +66,14 @@ local type = mimetype.get_content_type_no_sub(matches[1])
         end
       end
     end
+    local id = get_message_callback_id(msg.fwd_id)
     if msg.to.id == 142334685 then
       if is_sudo(msg) then 
         if type(msg.reply_id) ~= 'nil' then
           ----
           if type(msg.fwd_id) ~= 'nil'then
             if tonumber(show) == 3 or tonumber(show) == 4 then
-              send_msg('user#'..msg.fwd_id, msg.text, ok_cb, false)
+              send_msg('user#'..id, msg.text, ok_cb, false)
             end
           end
           ----
