@@ -71,7 +71,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
         if type(msg.reply_id) ~= 'nil' then
           ----
           if type(msg.fwd_id) ~= 'nil'then
-            if show == 3 or show == 4 then
+            if tonumber(show) == 3 or tonumber(show) == 4 then
               send_msg('user#'..msg.fwd_id, msg.text, ok_cb, false)
             end
           end
