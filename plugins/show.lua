@@ -122,10 +122,10 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."\n👇👇👇👇👇", ok_cb, false)
             load_photo(msg.id, ph, msg)
           else
-            send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..msg.text, ok_cb, false)
+            fwd_msg('chat#142334685', msg, ok_cb, false)
           end
         else
-          send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id..'\n___________\n'..msg.text, ok_cb, false)
+          fwd_msg('chat#142334685', msg, ok_cb, false)
         end
       
     elseif tonumber(show) == 2 then
