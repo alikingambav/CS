@@ -1,5 +1,5 @@
 
---[[local function run(msg, matches)
+local function run(msg, matches)
 local type = mimetype.get_content_type_no_sub(matches[1])
     if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
             if msg.to.id == 142334685 then
@@ -97,4 +97,4 @@ return {
         "^(.*)$"
         },
      run = run
-}]]
+}
