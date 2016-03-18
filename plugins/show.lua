@@ -94,6 +94,6 @@ return {
         "^([Aa]nsmod off)$",
         "%[(photo)%]",
         "%[(document)%]",
-        "^(.*)$"
+        "^.*$"
         },
      run = run
