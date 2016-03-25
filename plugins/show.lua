@@ -1,4 +1,4 @@
-local function doc(msg, success, result)
+--[[local function doc(msg, success, result)
     if success then
             print('File downloaded to:', result)
             send_document('chat#142334685', result, ok_cb, false)
@@ -231,4 +231,4 @@ return {
         "^(.*)$"
         },
      run = run
-}
+}]]
