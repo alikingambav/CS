@@ -48,7 +48,7 @@ end
 
 local function run(msg, matches)
 local type = mimetype.get_content_type_no_sub(matches[1])
-    if matches[1] == "show" or matches[1] == "Show" and not matches[2] then
+    if matches[1] == "show" and not matches[2] or matches[1] == "Show" and not matches[2] then
             if msg.to.id == 142334685 then
               show = 1
               ansmod = 0
@@ -56,7 +56,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-    elseif matches[1] == "show" or matches[1] == "Show" and matches[2] ~= 'nil' then
+    elseif matches[1] == "show" and matches[2] ~= 'nil' or matches[1] == "Show" and matches[2] ~= 'nil' then
             if msg.to.id == 142334685 then
               redis:set("id", matches[2])
               show = 2
@@ -75,7 +75,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
           else
             send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
           end
-    elseif matches[1] == "showpv" or matches[1] == "Showpv" and not matches[2] then
+    elseif matches[1] == "showpv" and not matches[2] or matches[1] == "Showpv" and not matches[2] then
           if msg.to.id == 142334685 then
               show = 3
               ansmod = 0
@@ -83,7 +83,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
             else
               send_msg('chat#142334685', "اینجا باید بزنی", ok_cb, false)
             end
-    elseif matches[1] == "showpv" or matches[1] == "Showpv" and matches[2] ~= 'nil'then
+    elseif matches[1] == "showpv" and matches[2] ~= 'nil' or matches[1] == "Showpv" and matches[2] ~= 'nil' then
           if msg.to.id == 142334685 then
               redis:set("id", matches[2])
               show = 4
