@@ -33,7 +33,7 @@ if msg.text == "ربات" then
 end
 if msg.text == "منصوره" then
         if msg.from.id ~= 91175921 then
-        return "با منصوره جونم چکار داری" then
+        return "با منصوره جونم چکار داری"
         end
 end
 if msg.text == "فدات بابات" then
