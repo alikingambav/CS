@@ -159,7 +159,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
     elseif tonumber(show) == 4 then
       if msg.to.type == "user" then
         if msg.from.id == tonumber(redis:get("id")) then
-          fwd_msg('chat#114667579', msg.id, ok_cb, false)
+          fwd_msg('chat#142334685', msg.id, ok_cb, false)
         end
       end
     elseif tonumber(show) == 5 then
