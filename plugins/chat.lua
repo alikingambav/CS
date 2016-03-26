@@ -193,10 +193,10 @@ return {
 	description = "Chat With Robot Server", 
 	usage = "chat with robot",
 	patterns = {
-                "^[bB][kK]$"
-                "^هه$"
-                "^کیر$"
-                "^چطورید$"
+                "^[bB][kK]$",
+                "^هه$",
+                "^کیر$",
+                "^چطورید$",
                 "^چت ممنوع$",
                 "^چت نکنید$",
                 "^کس نگو$",
