@@ -43,7 +43,7 @@ end
 end
 if msg.text == "سلام" then
         if msg.from.id == 91175921 then
-        return "سلام منصوره جون 😙«
+        return "سلام منصوره جون 😙"
         end
 end
 if msg.text == "Salam" then
