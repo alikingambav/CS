@@ -42,8 +42,8 @@ if msg.text == "فدات بابات" then
 end
 end
 if msg.text == "سلام" then
-        if msg.from.id ~= 91175921 then
-        return "سلام منصوره جون 😙"then
+        if msg.from.id == 91175921 then
+        return "سلام منصوره جون 😙«
         end
 end
 if msg.text == "Salam" then
