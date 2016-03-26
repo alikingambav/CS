@@ -31,10 +31,20 @@ if msg.text == "ربات" then
 	return "بله؟"
         end
 end
+if msg.text == "منصوره" tend
+        if msg.from.id ~= 91175921 then
+        return "با منصوره جونم چکار داری" then
+        end
+end
 if msg.text == "فدات بابات" then
         if msg.from.id == 45446970 then
         return "هستم باهات😉"
 end
+end
+if msg.text == "سلام" then
+        if msg.from.id ~= 91175921 then
+        return "سلام منصوره جون 😙"then
+        end
 end
 if msg.text == "Salam" then
 	return "سلام علیکم ، فارسی تایپ کن"
@@ -138,12 +148,12 @@ end
 if msg.text == "سولماز" then
         return "هعیییییی"
 end
-if msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(x) then
-        return "سلام بابایی 😍 ، خوش اومدی ..."
+if msg.action.type == "chat_add_user" and msg.action.user.id == 91175921 then
+        return "خوشومدی منصوره جونم😃"
 elseif msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(y) then
         return "سلام عمو 😍 ، خوش اومدی ..."
-elseif msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(x) then
-        return "واااای باباییم رفت 😞"
+elseif msg.action.type == "chat_del_user" and msg.action.user.id == 91175921 then
+        return "منصوره هم رفت 😑"
 elseif msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(y) then
         return "واااای عمو جونم رفت 😞"
 elseif msg.action.type == "chat_add_user" and msg.action.user.id == 153662106 then
@@ -170,6 +180,8 @@ return {
                 "^sik :D$",
                 "^[Bb]ashe$",
                 "^[Dd]ifense$",
+                "^سلام$",
+                "^منصوره$",
                 "^فدات بابات$",
                 "^گه نخور$",
                 "^ربات$",
