@@ -161,12 +161,45 @@ elseif msg.action.type == "chat_add_user" and msg.action.user.id == 153662106 th
 elseif msg.action.type == "chat_del_user" and msg.action.user.id == 153662106 then
         return "وااااااای....  مامان جونم رفت  😢😢😢"
 end
+if matches[1]:lower() == 'کس نگو' then
+  return " راست میگه دیگه کس نگو 😒"
+ end
+if matches[1]:lower() == 'چت نکنید' then
+  return "چت نکنید دیگه چقد زر میزنید 😡"
+ end
+if matches[1]:lower() == 'چت ممنوع' then
+  return "آقا چت ممنوعه ساکت باشید!"
+ end
+if matches[1]:lower() == 'چطورید' then
+  return "مرسی تو چطوری؟"
+end
+if matches[1]:lower() == 'کیر' then
+  return "تو کونت😐"
+end
+if matches[1]:lower() == 'kir' then
+  return "تو کونت😐"
+end
+if matches[1]:lower() == 'هه' then
+  return "کیره خر"
+  end
+if matches[1]:lower() == 'bk' then
+  return "Be Kiram ke be Kiret"
+end
+
+
 end
 
 return {
 	description = "Chat With Robot Server", 
 	usage = "chat with robot",
 	patterns = {
+                "^[bB][kK]$"
+                "^هه$"
+                "^کیر$"
+                "^چطورید$"
+                "^چت ممنوع$",
+                "^چت نکنید$",
+                "^کس نگو$",
                 "^!!tgservice (.+)$",
 		"^[Hh]i$",
 		"^[Hh]ello$",
