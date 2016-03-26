@@ -31,7 +31,7 @@ if msg.text == "ربات" then
 	return "بله؟"
         end
 end
-if msg.text == "منصوره" tend
+if msg.text == "منصوره" then
         if msg.from.id ~= 91175921 then
         return "با منصوره جونم چکار داری" then
         end
