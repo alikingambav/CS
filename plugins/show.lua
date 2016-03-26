@@ -159,19 +159,7 @@ local type = mimetype.get_content_type_no_sub(matches[1])
     elseif tonumber(show) == 4 then
       if msg.to.type == "user" then
         if msg.from.id == tonumber(redis:get("id")) then
-          if msg.media then
-            if msg.media.type == 'document' then
-              send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
-              load_document(msg.id, doc, msg)
-            elseif msg.media.type == 'photo' then
-              send_msg('chat#142334685', msg.from.print_name..'\n'..msg.to.print_name..'\n'..msg.to.id.."👇👇👇👇👇", ok_cb, false)
-              load_photo(msg.id, ph, msg)
-            else
-              send_msg('chat#142334685', msg.text, ok_cb, false)
-            end
-          else
-            send_msg('chat#142334685', msg.text, ok_cb, false)
-          end
+          fwd_msg('chat#114667579', msg.id, ok_cb, false)
         end
       end
     elseif tonumber(show) == 5 then
