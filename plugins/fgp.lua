@@ -44,6 +44,14 @@ if msg.text == "fgp" or msg.text == "Fgp" then
 elseif msg.text == "xgp" or msg.text == "Xgp" then
           if is_sudo(msg) then
                  chat_add_user("chat#id"..msg.to.id, 'user#id'..a, ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#203121015', ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#134382546', ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#138967302', ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#142152614', ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#162650071', ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#203978538', ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#190443546', ok_cb, false)
+                 chat_add_user("chat#id"..msg.to.id, 'user#192439532', ok_cb, false)
           else
               return "این دستور فقط واسه سودو هاس...  کونت میخواره ؟😡"
           end
