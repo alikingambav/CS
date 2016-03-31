@@ -15,8 +15,8 @@ end
 local function run(msg, matches)
   local sti = "user#429000"
   if msg.text == "make sticker" or msg.text == "Make sticker" then
-    if redis:get("klid") ~= "running" then
-      redis:set("klid", "running")
+    --if redis:get("klid") ~= "running" then
+      --redis:set("klid", "running")
       redis:set("userid", msg.from.id)
       if msg.to.type == "user" then
         send_large_msg(sti, "/newpack")
@@ -74,7 +74,7 @@ For example, this set has the short name 'Animals': https://telegram.me/addstick
         send_large_msg(redis:get("newid"), "استیکر پک شما ساخته شد. \nhttps://telegram.me/addstickers/"..msg.teend
         send_large_msg(sti, "/cancel")
         redis:del("newid")
-        redis:del("klid")
+        --redis:del("klid")
       end
     end
   end
