@@ -31,7 +31,6 @@ local function run(msg, matches)
   end
   if msg.from.id == 429000 then
     if msg.text == "Yay! A new stickers pack. How are we going to call it? Please choose a name for your pack." then
-      redis:set("s", "new")
       send_large_msg(sti, redis:get("userid"))
     end
     if msg.text == [[Alright! Now send me an emoji that corresponds to your first sticker.
@@ -63,6 +62,7 @@ I recommend using Telegram for Web/Desktop when uploading stickers.]] then
 
 For example, this set has the short name 'Animals': https://telegram.me/addstickers/Animals]]
         send_large_msg(redis:get("newid"), "حالا یه اسم واسه پک استیکرت انتخاب کن"
+        redis:del("fin")
         redis:set("name", "t")
       end
     end
