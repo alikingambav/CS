@@ -82,7 +82,6 @@ For example, this set has the short name 'Animals': https://telegram.me/addstick
       else
         send_large_msg(sti, msg.text)
       end
-    end
     elseif redis:get("photo") == "waiting" then
       if msg.type == "photo" then
         load_photo(msg.id, load, msg)
