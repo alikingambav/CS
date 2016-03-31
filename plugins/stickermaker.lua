@@ -99,7 +99,7 @@ For example, this set has the short name 'Animals': https://telegram.me/addstick
 end
 return {
   patterns = {
-	"^.*$",
+	"^(.*)$",
 	"%[(photo)%]",
         "^(Kaboom!)$",
         "^(Congratulations.)$"
