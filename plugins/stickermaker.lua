@@ -12,7 +12,7 @@ local function load(msg, success, result)
   end
 end
 
-local function run(msg)
+local function run(msg, matches)
   local sti = "user#429000"
   if msg.text == "make sticker" or msg.text == "Make sticker" then
     if redis:get("klid") ~= "running" then
