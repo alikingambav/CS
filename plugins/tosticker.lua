@@ -18,7 +18,7 @@ local function run(msg,matches)
     if msg.media then
        if msg.media.type == 'photo' and is_momod(msg) and redis:get("pic") then
         if redis:get("pic") == 'waiting' then
-          load_document(msg.id, tosticker, msg)
+          load_photo(msg.id, tosticker, msg)
         end
        end
     end
