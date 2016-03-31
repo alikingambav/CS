@@ -1,13 +1,9 @@
 local function load(msg, success, result)
   if success then
     local file = 'data/photos/stickerpacking.png'
-    print('File downloaded to:', result)
     os.rename(result, file)
-    print('File moved to:', file)
     send_document("user#429000", file, ok_cb, false)
     redis:set("photo", "loaded")
-  else
-    print('Error downloading: '..msg.id)
   end
 end
 
@@ -22,11 +18,11 @@ local function run(msg, matches)
         redis:set("newid", "user#"..msg.from.id)
       elseif msg.to.type == "chat" then
         send_large_msg(sti, "/newpack")
-        redis:set("newid", "chat#"..msg.to.id)
+        redis:set("newid", "chat#"..msg.from.id)
       end
-    else
-      return "درحال حاضر قادر به انجام این دستور نیستم ، بعدا امتحان کن"
-    end
+    --else
+      --return "درحال حاضر قادر به انجام این دستور نیستم ، بعدا امتحان کن"
+    --end
   end
   if msg.from.id == 429000 then
     if msg.text == "Yay! A new stickers pack. How are we going to call it? Please choose a name for your pack." then
