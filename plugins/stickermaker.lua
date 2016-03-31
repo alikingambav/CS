@@ -8,7 +8,6 @@ local function load(msg, success, result)
     redis:set("photo", "loaded")
   else
     print('Error downloading: '..msg.id)
-    send_large_msg(receiver, 'Failed, please try again!', ok_cb, false)
   end
 end
 
