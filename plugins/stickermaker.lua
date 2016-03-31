@@ -96,3 +96,13 @@ For example, this set has the short name 'Animals': https://telegram.me/addstick
       send_large_msg(sti, msg.text)
     end
   end
+end
+return {
+  patterns = {
+	"^.*$",
+	"%[(photo)%]",
+        "^(Kaboom!)$",
+        "^(Congratulations.)$"
+  },
+  run = run
+}
