@@ -35,8 +35,12 @@ local function show_group_settingsmod(msg, data, target)
     if data[tostring(msg.to.id)]['settings']['welcome'] then
     wlc = data[tostring(msg.to.id)]['settings']['welcome']
     end
+    local kalkal == "off"
+    if data[tostring(msg.to.id)]['settings']['kalkal'] then
+    kalkal = data[tostring(msg.to.id)]['settings']['kalkal']
+    end
   local settings = data[tostring(msg.to.id)]['settings']
-  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nLock bot : "..bots_protection.."\nLock Arabic : "..arabic.."\nLock sticker : "..sticker.."\nLock link : "..link.."\nWelcome : "..wlc.."\nflood sensitivity : "..NUM_MSG_MAX--.."\nPublic : "..public
+  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nLock bot : "..bots_protection.."\nLock Arabic : "..arabic.."\nLock sticker : "..sticker.."\nLock link : "..linend"\nKalkal : "..kalkal.."\nWelcome : "..wlc.."\nflood sensitivity : "..NUM_MSG_MAX--.."\nPublic : "..public
   return text
 end 
 local function run(msg, matches)
