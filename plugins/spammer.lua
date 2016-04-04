@@ -6,7 +6,7 @@ local function run(msg, matches)
      local text = matches[3]
         for i=1,num do
             ans = text.."\n"..ans
-        ans
+        end
     return ans
   end
 end
