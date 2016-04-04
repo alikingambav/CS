@@ -2,6 +2,8 @@ local function run(msg,matches)
 local x = 45446970
 local y = 136378403
 
+if data[tostring(msg.to.id)]['settings']['kalkal'] == "off" then
+
 if msg.text == "hi" then
 	return "سلام...  اگه میشه فارسی تایپ کن"
 end
@@ -185,7 +187,7 @@ if msg.text == "هه" then
 if msg.text == "bk" then
   return "Be Kiram ke be Kiret"
 end
-
+end
 
 end
 
@@ -193,13 +195,6 @@ return {
 	description = "Chat With Robot Server", 
 	usage = "chat with robot",
 	patterns = {
-                "^bk$",
-                "^هه$",
-                "^کیر$",
-                "^چطورید$",
-                "^چت ممنوع$",
-                "^چت نکنید$",
-                "^کس نگو$",
                 "^!!tgservice (.+)$",
 		"^[Hh]i$",
 		"^[Hh]ello$",
@@ -235,7 +230,14 @@ return {
                 "^💋💋💋💋$",
                 "^💋💋💋$",
                 "^تو باید مال من باشی ... تو لایق بهترینایی$",
-                "^اوره$"
+                "^اوره$",
+                "^bk$",
+                "^هه$",
+                "^کیر$",
+                "^چطورید$",
+                "^چت ممنوع$",
+                "^چت نکنید$",
+                "^کس نگو$",
 		}, 
 	run = run,
     --privileged = true,
