@@ -19,7 +19,7 @@ local function run(msg)
 end
 return {
    patterns = {
-      "^[KK]alkal on$",
+      "^[Kk]alkal on$",
       "^[Kk]alkal off$"
    },
    run = run
