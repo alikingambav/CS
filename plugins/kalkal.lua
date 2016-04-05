@@ -1,12 +1,12 @@
 local function run(msg)
-  if matches[1] == "on" then
+  if msg.text == "kalkal on" or msg.text == "Kalkal on" then
     if is_momod(msg) then
       data[tostring(msg.to.id)]['settings']['kalkal'] = 'on'
       data[tostring(msg.to.id)]['settings']['welcome'] = 'no'
       save_data(_config.moderation.data, data)
       return "👿"
     end
-  elseif matches[1] == "off" then
+  elseif msg.text == "kalkal off" or msg.text == "Kalkal off" then
     if is_momod(msg) then
       data[tostring(msg.to.id)]['settings']['kalkal'] = 'off'
       data[tostring(msg.to.id)]['settings']['welcome'] = 'yes'
@@ -19,8 +19,8 @@ local function run(msg)
 end
 return {
    patterns = {
-      "^kalkal (on)$",
-      "^kalkal (off)$"
+      "^[KK]alkal on$",
+      "^[Kk]alkal off$"
    },
    run = run
 }
