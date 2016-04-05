@@ -35,7 +35,7 @@ local function show_group_settingsmod(msg, data, target)
     if data[tostring(msg.to.id)]['settings']['welcome'] then
     wlc = data[tostring(msg.to.id)]['settings']['welcome']
     end
-    local kalkal == "off"
+    local kalkal = "off"
     if data[tostring(msg.to.id)]['settings']['kalkal'] then
     kalkal = data[tostring(msg.to.id)]['settings']['kalkal']
     end
