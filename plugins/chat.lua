@@ -150,19 +150,6 @@ end
 if msg.text == "سولماز" then
         return "هعیییییی"
 end
-if msg.action.type == "chat_add_user" and msg.action.user.id == 91175921 then
-        return "خوشومدی منصوره جونم😃"
-elseif msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(y) then
-        return "سلام عمو 😍 ، خوش اومدی ..."
-elseif msg.action.type == "chat_del_user" and msg.action.user.id == 91175921 then
-        return "منصوره هم رفت 😑"
-elseif msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(y) then
-        return "واااای عمو جونم رفت 😞"
-elseif msg.action.type == "chat_add_user" and msg.action.user.id == 153662106 then
-        return "سلام مامان 😍 ، خوش اومدی ..."
-elseif msg.action.type == "chat_del_user" and msg.action.user.id == 153662106 then
-        return "وااااااای....  مامان جونم رفت  😢😢😢"
-end
 if msg.text == "کس نگو" then
   return " راست میگه دیگه کس نگو 😒"
  end
@@ -187,6 +174,20 @@ if msg.text == "هه" then
 if msg.text == "bk" then
   return "Be Kiram ke be Kiret"
 end
+if msg.action.type == "chat_add_user" and msg.action.user.id == 91175921 then
+        return "خوشومدی منصوره جونم😃"
+elseif msg.action.type == "chat_add_user" and msg.action.user.id == tonumber(y) then
+        return "سلام عمو 😍 ، خوش اومدی ..."
+elseif msg.action.type == "chat_del_user" and msg.action.user.id == 91175921 then
+        return "منصوره هم رفت 😑"
+elseif msg.action.type == "chat_del_user" and msg.action.user.id == tonumber(y) then
+        return "واااای عمو جونم رفت 😞"
+elseif msg.action.type == "chat_add_user" and msg.action.user.id == 153662106 then
+        return "سلام مامان 😍 ، خوش اومدی ..."
+elseif msg.action.type == "chat_del_user" and msg.action.user.id == 153662106 then
+        return "وااااااای....  مامان جونم رفت  😢😢😢"
+end
+
 end
 
 end
