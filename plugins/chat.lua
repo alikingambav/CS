@@ -2,7 +2,7 @@ local function run(msg,matches)
 local x = 45446970
 local y = 136378403
 
-if data[tostring(msg.to.id)]['settings']['kalkal'] == "off" then
+if data[tostring(msg.to.id)]['settings']['kalkal'] ~= "on" then
 
 if msg.text == "hi" then
 	return "سلام...  اگه میشه فارسی تایپ کن"
