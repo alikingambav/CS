@@ -50,6 +50,7 @@ local function run(msg)
     end
     if msg.text == "❤️" or msg.text == "❤️❤️" or msg.text == "❤️❤️❤️" then
       return "قلب نزار حشری میشم"
+    end
     if msg.text == "❤️❤️❤️❤️" or msg.text == "❤️❤️❤️❤️❤️" or msg.text == "❤️❤️❤️❤️❤️❤️" then
       return "وقتی قلب میزاری من حشری میشم"
     end
