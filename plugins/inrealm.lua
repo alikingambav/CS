@@ -612,10 +612,10 @@ function run(msg, matches)
                         local group_type = get_group_type(msg)
 			return group_type
 		end
-		if matches[1] == 'list' or matches[1] == 'List' and matches[2] == 'admins' then
+		if matches[1] == 'list' and matches[2] == 'admins' or matches[1] == 'List' and matches[2] == 'admins' then
 			return admin_list(msg)
 		end
-		if matches[1] == 'list' or matches[1] == 'List' and matches[2] == 'groups' then
+		if matches[1] == 'list' and matches[2] == 'groups' or matches[1] == 'List' and matches[2] == 'groups' then
                   if msg.to.type == 'chat' then
 			groups_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/groups.txt", ok_cb, false)	
@@ -626,7 +626,7 @@ function run(msg, matches)
 			return "Group list created" --group_list(msg)
                   end
 		end
-		if matches[1] == 'list' or matches[1] == 'List' and matches[2] == 'realms' then
+		if matches[1] == 'list' and matches[2] == 'realms' or matches[1] == 'List' and matches[2] == 'realms' then
                   if msg.to.type == 'chat' then
 			realms_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/realms.txt", ok_cb, false)	
