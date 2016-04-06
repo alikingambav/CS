@@ -30,6 +30,15 @@ local function run(msg)
     if msg.text == "گه نخور" or msg.text == "گو نخور" or msg.text == "گو نخر" then
       return "من تو رو نمیخورم"
     end
+    if msg.text == "کیر" then
+      return "تو کونت"
+    end
+    if msg.text == "کییر" or msg.text == "کیییر" or msg.text == "کیرر" then
+      return "تو کس عمت"
+    end
+    if msg.text == "لاشی" then
+      return "سرش باشی"
+    end
   end
 
 
