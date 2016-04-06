@@ -44,6 +44,7 @@ local function run(msg)
     end
     if msg.text == "😂" or msg.text == "😂😂" or msg.text == "😂😂😂" then
       return "نخند توش میسُره 😕"
+    end
     if msg.text == "😂😂😂😂" or msg.text == "😂😂😂😂😂" or msg.text == "😂😂😂😂😂😂" then
       return "نخند آبم اومد 😂💦💦💦"
     end
