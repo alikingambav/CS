@@ -14,6 +14,23 @@ local function run(msg)
       return "کلکل خاموش شد"
     end
   end
+  if data[tostring(msg.to.id)]['settings']['kalkal'] == "on" then
+    if msg.text == "سلام" or msg.text == "slm" then
+      return "سلامو کیر خر"
+    end
+    if msg.text == "خخخ" or msg.text == "خخخخ" then
+      return "مگه کیرمو کردم تو کونت که میخندی؟"
+    end
+    if msg.text == "خخخخخ" or msg.text == "خخخخخخ" then
+      return "کیر😕"
+    end
+    if msg.text == "خخخخخخخ" or msg.text == "خخخخخخخخ" or msg.text == "خخخخخخخخخ" then
+      return "بخند تا دنیا به کس ننت بخنده"
+    end
+    if msg.text == "گه نخور" or msg.text == "گو نخور" or msg.text == "گو نخر" then
+      return "من تو رو نمیخورم"
+    end
+  end
 
 
 end
