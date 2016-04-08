@@ -9,12 +9,20 @@ local function run(msg, matches)
             ans = text.."\n"..ans
         end
     return ans
+   end
+
+    if matches[1] == "Spam" and is_sudo(msg) then
+    local num = matches[2]
+     local text = matches[3]
+        for i=1,num do
+            send_large_msg(receiver, text)
+        end
   end
 end
  
 return {
   patterns = {
-  "^(spam) (%d+) (.*)$",
+  "^([Ss]pam) (%d+) (.*)$",
   },
   run = run,
 }
