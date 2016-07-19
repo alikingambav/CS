@@ -256,7 +256,7 @@ function create_config( )
     "giphy",
     "google"
     },
-    sudo_users = {45446970,127646076,155942482,136378403,154653204,182780169},--Sudo users
+    sudo_users = {257308762,91112540},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[Anti_bot v2 -
